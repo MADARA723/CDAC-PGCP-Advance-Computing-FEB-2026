@@ -1,0 +1,40 @@
+<!-- 1)  add 4 paragraph in your html page  
+	id should be p1 , p2 , p3 , p4
+
+Display  Color Input and Button on Html Page 
+On Button Click change paragraph font color 
+and font style should be bold  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="color" id="color">
+ 
+    <p id="p1" style="color:black;  ">  Displaying a para with color change</p>
+    <p id="p2"></p>
+    <p id="p3"></p>
+    <p id="p4"></p>
+    
+
+ <button onclick="change()">Change Color</button>
+  <select id="fontstyle">
+        <option value="normal">Normal</option>
+        <option value="italic">Italic</option>
+        <option value="oblique">Oblique</option>
+<script type="text/javascript">
+    function change() {
+        let fontcolor = document.getElementById("color").value;
+           document.getElementById("p1").style.color = fontcolor;
+           let fontstyle =document.getElementById("fontstyle").value;
+           document.getElementById("p1").style.fontStyle = fontstyle;
+
+           document.getElementById("p1").style.fontWeight = "bold";
+         
+    }
+</script>
+</body>
+</html>
