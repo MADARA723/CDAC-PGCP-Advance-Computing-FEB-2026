@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Text Converter</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    margin-top: 50px;
+}
+
+input[type="text"]{
+    padding: 8px;
+    width: 250px;
+}
+
+.container{
+    margin-top: 20px;
+}
+
+p{
+    margin-top: 20px;
+    font-size: 20px;
+    color: blue;
+}
+</style>
+
+<script>
+function convertText(type)
+{
+    let text = document.getElementById("textdata").value;
+    let result = "";
+
+    if(type=="upper")
+    {
+        result = text.toUpperCase();
+    }
+    else if(type=="lower")
+    {
+        result = text.toLowerCase();
+    }
+    else
+    {
+        result = text;
+    }
+
+    document.getElementById("output").innerHTML = result;
+}
+</script>
+
+</head>
+
+<body>
+
+<h2>Text Case Converter</h2>
+
+<input type="text" id="textdata" placeholder="Enter text here">
+
+<div class="container">
+
+<label>
+<input type="radio" name="case" onclick="convertText('upper')">
+UpperCase
+</label>
+
+<label>
+<input type="radio" name="case" onclick="convertText('lower')">
+LowerCase
+</label>
+
+<label>
+<input type="radio" name="case" onclick="convertText('same')">
+As It Is
+</label>
+
+</div>
+
+<p id="output"></p>
+
+</body>
+</html>
