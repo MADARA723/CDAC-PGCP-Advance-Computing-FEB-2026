@@ -7,9 +7,20 @@
 
     <script>
 
-        object.prototype.print=function(...s){
+        Object.prototype.print=function(...s){
             console.log("prototype"+s);
         }
+        Object.prototype.print1=function(...s)
+        {
+            console.log("prototype2"+s)
+        }
+
+        let b={
+            i1:100,
+            i2:200
+        }
+        b.print(b.i1,34,41);
+        b.print1(b.i2,36,42);
         
     </script>
 </head>
