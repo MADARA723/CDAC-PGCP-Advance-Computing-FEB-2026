@@ -22,58 +22,38 @@ then forward control to Home.html  -->
     <script>
          function validate()
          {
-            let result,namev,password;
+            var username = document.getElementById("sname").value;
+            var password = document.getElementById("password").value;
 
-              let v = document.forms["form1"]["sname"].value
-               let password1 =document.forms.form1.password.value
+            if(username =="" || password =="") {
+                alert("Both Username and Password are required");
+                return false;
+            }
 
-        //check if it is empty or length is less than 2 show a message
-        if (v.trim() == "" || v.length < 2 || !isNaN(v)) {
-            alert("name cannot be empty or less than 2 chars")
-            document.forms["form1"]["sname"].focus()
-            namev = false
-            return false
-        }
+            if(password.length < 8 || password.length > 12){
+            alert("password must be between 9 and 12 character");
+            return false;
+            }
 
-        if(password1.trim()==""||password1.length <2 || !isNaN(password1)|| password1.length<12 || password1.length > 8)
-        {
-             alert("password cannot be empty and should be of lenght 8 to 12 charecters maximum")
-        document.forms["form1"]["password"].focus()
-        
-        
-
-        }
-        else {
-             if(v =="iet" && password1 == "iet1234546")
-              {
-                window.location="home.html"
-                alert("Validated and iet condition satisfied")
-
-
-               
-               return true
-              }
-              else{
-                alert("validated only")
-                return true
-
+            if(username == "iet" && password == "iet12345"){
                 
-              }
-              return true
-            
-        }
+                alert ("Forward to page Username Or Password");
+                
+                return true;
+            }
 
-       
+            alert("Login Successful");
+            return true;
 
           }
          
     </script>
 </head>
 <body>
-    <form name="form1" onsubmit="return validate()" >
-        <input type="text" name="sname">
-        <input type="pasword" name="password">
-        <button type="submit" name="submit">submit</button>
+    <form name="form1" onsubmit="return validate()" action="home.html" >
+        <input type="text" id="sname">
+        <input type="password" id="password">
+        <button type="submit" id="submit">submit</button>
     </form>
 </body>
 </html>
