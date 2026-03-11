@@ -50,8 +50,9 @@ int main()
 {
     String1 c3(4);
     c3.display();
-    String1 c4(40,"*");
+    String1 c4(40,'*');
     c4.display();
     
 }
+
 
