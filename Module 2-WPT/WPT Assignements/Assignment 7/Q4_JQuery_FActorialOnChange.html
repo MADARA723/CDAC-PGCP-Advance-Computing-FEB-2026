@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FactorialJQuery</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Bind to the "input" event for real-time calculation, or "change"
+            $("#num").on('input', function(){
+                // Parse the input value as an integer
+                let n = parseInt($(this).val(), 10);
+                let fact = 1;
+                
+                // Validation: handle empty, negative, or non-numeric input
+                if (isNaN(n)) {
+                    $("#result").text("");
+                    return;
+                }
+                if(n < 0) {
+                    $("#result").text("Factorial not defined for -ve numbers");
+                    return;
+                }
+                
+                // Factorial calculation logic
+                for(let i = 1; i <= n; i++){
+                    fact *= i;
+                }
+                
+                // Display result
+                $("#result").text("The factorial of " + n + " is: " + fact);
+            });
+        });
+    </script>
+</head>
+<body>
+    <label>Enter the number:</label>
+    <input type="number" id="num" min="0">
+    <p id="result"></p>
+</body>
+</html>
