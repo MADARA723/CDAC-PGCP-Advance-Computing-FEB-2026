@@ -1,0 +1,64 @@
+<!-- 1) Using Jquery write an html that has a button-OK . When button is clicked
+display hello in a <p> tag
+Display italics hello in another <p> tag
+Distplay underline hello in third <p> tag -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"> </script> 
+
+    <script>
+
+        $(document).ready(function() {
+            $("#b1").click(function(){
+                $("#p1").css("display","none");
+            })
+
+            $("#b2").click(function(){
+                $("#p1").css("display","block");
+            })
+
+            $("#b3").click(function(){
+                $("#p2").css("text-decoration-line","underline");
+            })
+
+            $("#b4").click(function(){
+                $("#p3").css("font-style","italic");
+            })
+
+
+
+        
+        }
+    )
+
+
+    </script>
+</head>
+<body>
+
+    <p id="p1">
+        hello
+    </p>
+    <p id="p2">
+        hello
+    </p>
+    <p id="p3">
+        hello
+    </p>
+
+    <button id="b1"> Hide </button>
+
+    <button id="b2" > display </button>
+
+    <button id="b3"> underline </button>
+    
+    <button id="b4">  italics </button>
+</body>
+</html>

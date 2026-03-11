@@ -1,0 +1,44 @@
+<!-- JavaScript 
+
+1) take array of 10 elements 
+
+display array as it is 
+
+and use predefined methods of array and display 
+
+only even numbers , odd numbers and display whole array 
+in sorted way  -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let arr=[1,22,23,45,13,98,54,38,89,40]
+        console.log(arr)
+
+        console.log("This is even Array")
+        let newArrayeven = arr.filter((num) => num % 2 == 0)
+        console.log(newArrayeven)
+
+        console.log("This is odd Array")
+        let newArrayodd = arr.filter((num) => num % 2 == 1)
+        console.log(newArrayodd)
+
+
+         // sort array data )
+          console.log("This is Sorted Array")
+        let sorted = arr.sort((n1, n2) => (n1 - n2));
+                console.log(sorted);
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
