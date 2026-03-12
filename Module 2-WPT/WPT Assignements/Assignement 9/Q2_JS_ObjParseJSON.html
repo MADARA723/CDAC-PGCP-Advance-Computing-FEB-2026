@@ -1,0 +1,50 @@
+<!-- 
+2)  declare 1 variable which contains data for 
+    Object format convert that data in json format
+    and again in Object Format  -->
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script>
+           function convertData(){
+
+    // Object format
+    var student = {
+        id: 101,
+        name: "Rahul",
+        course: "BCA"
+    };
+
+    // Convert Object to JSON
+    var jsonData = JSON.stringify(student);
+
+    // Display JSON
+    document.getElementById("json").innerHTML = jsonData;
+
+    // Convert JSON back to Object
+    var objData = JSON.parse(jsonData);
+
+    // Display Object data
+    document.getElementById("object").innerHTML = 
+        "ID: " + objData.id + 
+        " Name: " + objData.name + 
+        " Course: " + objData.course;
+}
+
+       </script>
+    </head>
+    <body>
+       <h3>Object ↔ JSON Conversion</h3>
+
+<button onclick="convertData()">Convert</button>
+
+<p><b>JSON Format:</b> <span id="json"></span></p>
+
+<p><b>Object Format:</b> <span id="object"></span></p>
+    </body>
+    </html>
