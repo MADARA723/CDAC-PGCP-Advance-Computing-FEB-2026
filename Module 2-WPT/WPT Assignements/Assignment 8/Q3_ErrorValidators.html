@@ -1,0 +1,31 @@
+<!-- 3)  create HTML page with 1 textfield and button 
+     add predefined validators on textfield 
+     required , minlength , maxlength 
+     on button click display error message in front of textfield 
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validateForm() {
+            var input = document.getElementById("username");
+            var error = document.getElementById("errorMsg");
+
+            if (!input.checkValidity()) {
+                error.innerHTML = input.validationMessage;
+            } else {
+                error.innerHTML = "Valid Input";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="username" required minlength="3" maxlength="10">
+     <button onclick="validateForm()">Submit</button>
+     <p id="errorMsg" style="color:red;"></p>
+</body>
+</html>

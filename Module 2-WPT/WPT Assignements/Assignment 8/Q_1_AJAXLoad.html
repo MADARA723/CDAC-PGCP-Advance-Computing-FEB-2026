@@ -1,0 +1,49 @@
+<!-- 1)
+Using AJAX concept load data from given url 
+https://fakestoreapi.com/products
+
+and display data in html page in table format 
+
+	id | Title | price -->
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>AJAX Product Table</title>
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: "https://fakestoreapi.com/products",
+                method: "GET",
+                success: function(data){
+                    var rows = "";
+                    for(var i=0; i<data.length; i++){
+                        rows += "<tr>";
+                        rows += "<td>" + data[i].id + "</td>";
+                        rows += "<td>" + data[i].title + "</td>";
+                        rows += "<td>" + data[i].price + "</td>";
+                        rows += "</tr>";
+                    }
+                    $("#productBody").html(rows);
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<h2>Product List</h2>
+<table border="1" cellpadding="10">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    <tbody id="productBody">
+    </tbody>
+</table>
+</body>
+</html>

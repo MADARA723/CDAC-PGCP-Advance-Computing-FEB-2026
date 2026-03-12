@@ -1,0 +1,35 @@
+<!-- 4) accept student id and student name from user
+   on Button click save data in Object format 
+   and display data in Table format on same html page -->
+   <!DOCTYPE html>
+<html>
+<head>
+    <title>Student Data</title>
+    <script>
+        function addStudent(){
+            var id = document.getElementById("sid").value;
+            var name = document.getElementById("sname").value;
+            var student = {
+                studentId: id,
+                studentName: name
+            };
+            var table = document.getElementById("studentTable");
+            var row = table.insertRow();
+            row.insertCell(0).innerHTML = student.studentId;
+            row.insertCell(1).innerHTML = student.studentName;
+        }
+    </script>
+</head>
+<body>
+Student ID: <input type="text" id="sid"><br><br>
+Student Name: <input type="text" id="sname"><br><br>
+<button onclick="addStudent()">Add Student</button>
+<br><br>
+<table border="1" id="studentTable">
+    <tr>
+        <th>Student ID</th>
+        <th>Student Name</th>
+    </tr>
+</table>
+</body>
+</html>
