@@ -1,0 +1,45 @@
+<!-- 3) take div on your html with width 50 and height 50 px 
+   on start button click  animate that div to left to right and change height and width -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jQuery Animation Example</title>
+
+    <!-- jQuery CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <style>
+        #box{
+            width:50px;
+            height:50px;
+            background-color:red;
+            position:relative;
+        }
+    </style>
+</head>
+
+<body>
+
+<button id="startBtn">Start</button>
+
+<div id="box"></div>
+
+<script>
+$(document).ready(function(){
+
+    $("#startBtn").click(function(){
+
+        $("#box").animate({
+            left: "400px",
+            width: "100px",
+            height: "100px"
+        }, 2000);
+
+    });
+
+});
+</script>
+
+</body>
+</html>
