@@ -1,0 +1,10 @@
+Sync Data
+Read File → Wait → Print content → Continue program
+
+Async Data
+
+Task1 → Start File Read
+Task2 → Continue
+File Ready → Callback
+
+

@@ -1,0 +1,17 @@
+{
+  "name": "assignment-11",
+  "version": "1.0.0",
+  "main": "Q3_01main.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "Q3_01main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
