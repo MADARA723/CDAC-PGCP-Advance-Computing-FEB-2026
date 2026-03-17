@@ -1,64 +1,52 @@
-const http = require('http');
-const url = require('url');
+// 3)  
+//  by using http module create server and run on port numer  - 5050 
 
-const s1 = http.createServer(handleData);
-let myData = [12, 23, 34, 56, 78];
-function handleData(request, response) {
+//   create api  /
+// 	   /index   --- > display <index page> on browser 
+//                     /home --- > display <Home Page> on browser 
 
-    const queryParams = url.parse(request.url, true).query;
-    console.log(queryParams.num);
-    let d = url.parse(request.url, true).query
-    console.log(d);
+// 	/aboutus --> display <About US> using post method 
 
-    if (request.method == 'GET') {
+// hint  - use postman for post method 
 
-        if (request.url == '/') {
-            response.write("Hello From Server")
+const http=require('http');
+const url =require('url')
+
+const s1=http.createServer(handleData);
+
+function handleData(request,response)
+{
+    const queryParams=url.parse(request.url,true).query;
+    console.log(queryParams);
+
+
+    if(request.method=='GET'){
+        if(request.url=='/index'){
+            response.write("<Index Page>")
         }
-
-        if (request.url == '/getData') {
-            response.write("Data " + myData)
-        }
-
-
+        
     }
-    // add the data 
-    if (request.method == 'POST') {
+    if(request.method=='POST'){
 
-
-        //console.log(response.body);
-        // console.log(request.url)
-        // let link = request.url;
-        //let d = link.parse();
-        const queryParams = url.parse(request.url, true).query;
-        console.log("dddd : " + queryParams);
-        let d = url.parse(request.url, true).query
+        const d=url.parse(request.url,true).query;
         console.log(d);
 
-        let paramaters = d.query;
-        console.log("Data from URL " + paramaters.num)
-
+        let paramaters=d.query;
         let newData = JSON.stringify(paramaters);
         console.log(newData);
-        console.log("Data from URL " + typeof (newData))
-        console.log("Data from URL " + newData["num"])
-
-        // parse 
-
-        if (request.url == '/home') {
-            response.write("Home Page")
-            myData.push('new');
+        if(request.url=='/home')
+        {
+            response.write("<Home Page>")
         }
-
+        if(request.url=='/aboutus')
+        {
+            response.write("<About US>")
+        }
     }
-
     response.end();
-
-
-
 }
 
-s1.listen(8080, () => {
+s1.listen(5555, () => {
 
     console.log("Server Started ")
 
