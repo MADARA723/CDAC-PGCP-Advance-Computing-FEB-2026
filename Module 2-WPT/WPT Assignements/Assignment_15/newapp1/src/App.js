@@ -2,6 +2,8 @@
 import './App.css';
 import Counter from './Counter';
 import Login from './LoginFile';
+import LifeCycle from './CLassLifeCycle';
+import TodoApp from './ToDo'
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
     //   </header> */}
       <Counter num1={30} num2={100} />
       <Login />
+      <LifeCycle />
+      <TodoApp />
      </div>
     
   );
