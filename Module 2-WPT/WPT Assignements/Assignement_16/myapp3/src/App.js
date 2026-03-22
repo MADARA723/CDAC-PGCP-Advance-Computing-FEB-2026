@@ -3,6 +3,7 @@ import './App.css';
 import CounterFunc from './CounterFunc'
 import DropDown from './DataDropD'
 import Parent from './1_Parent'
+import FuncLife from './FuncLifeUseE'
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
      <CounterFunc />
       <DropDown />
        <Parent /> 
+       <FuncLife />
       </div>
   );
 }
