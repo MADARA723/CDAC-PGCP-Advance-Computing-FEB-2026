@@ -1,24 +1,31 @@
- 
- import [useState] from "react"
- import DropCalc from './1_Parent';
+import { Component } from "react";
 
- function Child(){
-    let [Calc,showResult]=useState(['Add','Substraction','Division','Multiplication']);
-    let[res,setRes]=useState(0);
-         const num1 = parseFloat(number1) || 0;
-    const num2 = parseFloat(number2) || 0;
-    if(item==="Add"){
-    setRes(num1 + num2);
-    }
-    
-   return(
-        <>
-        {/* <input type='number'value={number1} onChange={handleNum1Change}></input>
-        <input type='number' value={number2} onChange={handleNum2change}></input> */}
-        <select>{Calc.map((item,index)=>
-        <option key={index}>{item} onChange={}</option>)}
-        </select>
-
-       </>
-   )
+class Child extends Component{
+    constructor() {
+    super();
+    this.handleChange = this.handleChange.bind(this);
 }
+    handleChange(e){
+        let operation=e.target.value;
+
+        this.props.onOperation(operation);
+    }
+    render()
+    {
+        return(
+            <>
+                <h3>Select Operation</h3>
+
+                <select onChange={this.handleChange}>
+                    <option value="">--Select--</option>
+                    <option value="add">Addition</option>
+                    <option value="sub">Subtraction</option>
+                    <option value="mul">Multiplication</option>
+                    <option value="div">Division</option>
+                </select>
+            </>
+        )
+
+    }
+}
+export default Child;
