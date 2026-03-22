@@ -2,28 +2,16 @@
 import './App.css';
 import CounterFunc from './CounterFunc'
 import DropDown from './DataDropD'
-import DropCalc from './1_Parent'
+import Parent from './1_Parent'
+
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
-      <CounterFunc />
+    // 
+    <div>
+     <CounterFunc />
       <DropDown />
-      <DropCalc />
-    </div>
+       <Parent /> 
+      </div>
   );
 }
 
