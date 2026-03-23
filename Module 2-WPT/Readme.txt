@@ -2,6 +2,7 @@ npm init -y
 npm install module(if required)
 npm install axios(if required)
 npm install express(if required)
+npm react-router-dom (if Routes are used in the Jsx file ofr multiple pages)
 npx create-react-app <filename>
 
 
