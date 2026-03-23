@@ -1,6 +1,7 @@
 npm init -y
 npm install module(if required)
 npm install axios(if required)
+npm install express(if required)
 npx create-react-app <filename>
 
 
