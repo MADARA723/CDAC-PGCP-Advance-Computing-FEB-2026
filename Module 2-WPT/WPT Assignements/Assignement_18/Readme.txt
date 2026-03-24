@@ -6,6 +6,10 @@ npm install express(if required)
 
 npm react-router-dom (if Routes are used in the Jsx file ofr multiple pages)Here it is needed
 
+npm install react-error-boundary(here it is needed)  
+import {ErrorBoundary} from 'react-error-boundary'
+
+
 npx create-react-app <filename>
 
 
