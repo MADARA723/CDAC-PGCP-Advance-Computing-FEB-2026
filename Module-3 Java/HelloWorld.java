@@ -1,0 +1,56 @@
+package Package1;
+import java.util.*;
+
+public class HelloWorld{
+	public static int add(int a,int b){
+		  return a+b;
+	   
+	}
+	public static int add(int a,int b,int ...c) {
+		int ans=a+b;
+		
+		for(int i=0;i<c.length;i++){
+			ans +=c[i];
+			
+		}
+		return ans;
+	}
+	public static float add(float a,float b){
+		   return a+b;
+	}
+	
+	public static void main(String []args)
+	{
+		System.out.println("Hello World!!!!");
+		System.out.println(add(10,20));
+		System.out.println(add(10,20,56));
+		System.out.println(add(10,20,56,67,89,6,8,3,2));
+		System.out.println(add(10.6f,20.8f));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}
