@@ -1,0 +1,648 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databeses
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databeses' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+6 rows in set (0.02 sec)
+
+mysql> create databese First;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'databese First' at line 1
+mysql> create database First;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| first              |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sakila             |
+| sys                |
+| world              |
++--------------------+
+7 rows in set (0.00 sec)
+
+mysql> use first;
+Database changed
+mysql> select database();
++------------+
+| database() |
++------------+
+| first      |
++------------+
+1 row in set (0.00 sec)
+
+mysql> create table t1(id int,ename1 char(10),ename varchar(20));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> show tables;
++-----------------+
+| Tables_in_first |
++-----------------+
+| t1              |
++-----------------+
+1 row in set (0.01 sec)
+
+mysql> te;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'te' at line 1
+mysql> t1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 't1' at line 1
+mysql> select * from t1;
+Empty set (0.01 sec)
+
+mysql> show columns
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> desc t1;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| id     | int         | YES  |     | NULL    |       |
+| ename1 | char(10)    | YES  |     | NULL    |       |
+| ename  | varchar(20) | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> insert into te(id,ename1,ename) values (1,"Asit","More"),(2,"Shashi","Tharoor"),(3,"Sandesh","Patil");
+ERROR 1146 (42S02): Table 'first.te' doesn't exist
+mysql> insert into t1(id,ename1,ename) values (1,"Asit","More"),(2,"Shashi","Tharoor"),(3,"Sandesh","Patil");
+Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> t1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 't1' at line 1
+mysql> select id,ename1,ename from t1;
++------+---------+---------+
+| id   | ename1  | ename   |
++------+---------+---------+
+|    1 | Asit    | More    |
+|    2 | Shashi  | Tharoor |
+|    3 | Sandesh | Patil   |
++------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> autocommit =off;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'autocommit =off' at line 1
+mysql> alter table t1 change ename surname varchar(20);
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| ename1  | char(10)    | YES  |     | NULL    |       |
+| surname | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select id,ename1,surname from t1;
++------+---------+---------+
+| id   | ename1  | surname |
++------+---------+---------+
+|    1 | Asit    | More    |
+|    2 | Shashi  | Tharoor |
+|    3 | Sandesh | Patil   |
++------+---------+---------+
+3 rows in set (0.00 sec)
+
+mysql> alter table t1 add column marks int(10);
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> insert into t1(marks) values(67),(45),(23);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> select id,ename1,marks;
+ERROR 1054 (42S22): Unknown column 'id' in 'field list'
+mysql> select id,ename1,marks from t1;
++------+---------+-------+
+| id   | ename1  | marks |
++------+---------+-------+
+|    1 | Asit    |  NULL |
+|    2 | Shashi  |  NULL |
+|    3 | Sandesh |  NULL |
+| NULL | NULL    |    67 |
+| NULL | NULL    |    45 |
+| NULL | NULL    |    23 |
++------+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> delete marks from t1;
+ERROR 1109 (42S02): Unknown table 'marks' in MULTI DELETE
+mysql> delete column marks from t1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'column marks from t1' at line 1
+mysql> alter table t1 delete column marks from t1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'delete column marks from t1' at line 1
+mysql> alter table t1 drop column marks;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| ename1  | char(10)    | YES  |     | NULL    |       |
+| surname | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table t1 add column marks int;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| ename1  | char(10)    | YES  |     | NULL    |       |
+| surname | varchar(20) | YES  |     | NULL    |       |
+| marks   | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> update t1 set marks = 67 where id=1;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks = 79 where id=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks = 89 where id=3;
+Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select id,ename1,surname,marks from t1;
++------+---------+---------+-------+
+| id   | ename1  | surname | marks |
++------+---------+---------+-------+
+|    1 | Asit    | More    |    67 |
+|    2 | Shashi  | Tharoor |    79 |
+|    3 | Sandesh | Patil   |    89 |
+| NULL | NULL    | NULL    |  NULL |
+| NULL | NULL    | NULL    |  NULL |
+| NULL | NULL    | NULL    |  NULL |
++------+---------+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> insert into t1 values(4,"Rohan","Panale")
+    -> insert into t1 values(5,"Aditya","Patil");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'insert into t1 values(5,"Aditya","Patil")' at line 2
+mysql> insert into t1 values(4,"Rohan","Panale",98),(5,"Aditya","Patil",46),(6,"Vishnu","Kendre,69);
+    ">
+    "> ;
+    "> ;;
+    "> ^C
+mysql> insert into t1 values (4,"Rohan","Panale",98),(5,"Aditya","Patil",46),(6,"Vishnu","Kendre,69);
+    "> ^C
+mysql> insert into t1(id,ename1,surname,marks) values (4,"Rohan","Panale",98),(5,"Aditya","Patil",46),(6,"Vishnu","Kendre,69);
+    "> insert into t1(id,ename1,surname,marks) values (4,"Rohan","Panale",98),(5,"Aditya","Patil",46),(6,"Vishnu","Kendre,69);^C
+mysql> insert into t1 values (4,"Rohan","Panale",98),(5,"Aditya","Patil",46),(6,"Vishnu","Kendre",69);
+Query OK, 3 rows affected (0.00 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> selct * from t1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'selct * from t1' at line 1
+mysql> select * from t1;
++------+---------+---------+-------+
+| id   | ename1  | surname | marks |
++------+---------+---------+-------+
+|    1 | Asit    | More    |    67 |
+|    2 | Shashi  | Tharoor |    79 |
+|    3 | Sandesh | Patil   |    89 |
+| NULL | NULL    | NULL    |  NULL |
+| NULL | NULL    | NULL    |  NULL |
+| NULL | NULL    | NULL    |  NULL |
+|    4 | Rohan   | Panale  |    98 |
+|    5 | Aditya  | Patil   |    46 |
+|    6 | Vishnu  | Kendre  |    69 |
++------+---------+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> delete from t1 where id=NULL and ename1=NULL and surname=NULL and marks=NULL;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> select id,ename1,surname,marks from t1;
++------+---------+---------+-------+
+| id   | ename1  | surname | marks |
++------+---------+---------+-------+
+|    1 | Asit    | More    |    67 |
+|    2 | Shashi  | Tharoor |    79 |
+|    3 | Sandesh | Patil   |    89 |
+| NULL | NULL    | NULL    |  NULL |
+| NULL | NULL    | NULL    |  NULL |
+| NULL | NULL    | NULL    |  NULL |
+|    4 | Rohan   | Panale  |    98 |
+|    5 | Aditya  | Patil   |    46 |
+|    6 | Vishnu  | Kendre  |    69 |
++------+---------+---------+-------+
+9 rows in set (0.00 sec)
+
+mysql> delete from t1 where id is NULL and ename1 is NULL and surname is NULL and marks is NULL;
+Query OK, 3 rows affected (0.01 sec)
+
+mysql> select id,ename1,surname,marks from t1;
++------+---------+---------+-------+
+| id   | ename1  | surname | marks |
++------+---------+---------+-------+
+|    1 | Asit    | More    |    67 |
+|    2 | Shashi  | Tharoor |    79 |
+|    3 | Sandesh | Patil   |    89 |
+|    4 | Rohan   | Panale  |    98 |
+|    5 | Aditya  | Patil   |    46 |
+|    6 | Vishnu  | Kendre  |    69 |
++------+---------+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> desc t1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| ename1  | char(10)    | YES  |     | NULL    |       |
+| surname | varchar(20) | YES  |     | NULL    |       |
+| marks   | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> set autocommit=off;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> alter table t1 change ename1 name varchar(20);
+Query OK, 6 rows affected (0.03 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| name    | varchar(20) | YES  |     | NULL    |       |
+| surname | varchar(20) | YES  |     | NULL    |       |
+| marks   | int         | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+mysql> select id,ename1,surname,marks from t1;
+ERROR 1054 (42S22): Unknown column 'ename1' in 'field list'
+mysql> select id,name,surname,marks from t1;
++------+---------+---------+-------+
+| id   | name    | surname | marks |
++------+---------+---------+-------+
+|    1 | Asit    | More    |    67 |
+|    2 | Shashi  | Tharoor |    79 |
+|    3 | Sandesh | Patil   |    89 |
+|    4 | Rohan   | Panale  |    98 |
+|    5 | Aditya  | Patil   |    46 |
+|    6 | Vishnu  | Kendre  |    69 |
++------+---------+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table t1 change surname surname1 int(30);
+ERROR 1366 (HY000): Incorrect integer value: 'More' for column 'surname1' at row 1
+mysql> alter table x drop column marks;
+ERROR 1146 (42S02): Table 'first.x' doesn't exist
+mysql> alter table t1 drop column marks;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| id      | int         | YES  |     | NULL    |       |
+| name    | varchar(20) | YES  |     | NULL    |       |
+| surname | varchar(20) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+mysql> alter table t1 add(subject1 varchar(20),subject2 varchar(20));
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc t1;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| name     | varchar(20) | YES  |     | NULL    |       |
+| surname  | varchar(20) | YES  |     | NULL    |       |
+| subject1 | varchar(20) | YES  |     | NULL    |       |
+| subject2 | varchar(20) | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> select * from t1;
++------+---------+---------+----------+----------+
+| id   | name    | surname | subject1 | subject2 |
++------+---------+---------+----------+----------+
+|    1 | Asit    | More    | NULL     | NULL     |
+|    2 | Shashi  | Tharoor | NULL     | NULL     |
+|    3 | Sandesh | Patil   | NULL     | NULL     |
+|    4 | Rohan   | Panale  | NULL     | NULL     |
+|    5 | Aditya  | Patil   | NULL     | NULL     |
+|    6 | Vishnu  | Kendre  | NULL     | NULL     |
++------+---------+---------+----------+----------+
+6 rows in set (0.00 sec)
+
+mysql> update t1 set subject1="Maths",subject2="Science" where id is 1;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1' at line 1
+mysql> update t1 set subject1="Maths",subject2="Science" where id = 1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from t1;
++------+---------+---------+----------+----------+
+| id   | name    | surname | subject1 | subject2 |
++------+---------+---------+----------+----------+
+|    1 | Asit    | More    | Maths    | Science  |
+|    2 | Shashi  | Tharoor | NULL     | NULL     |
+|    3 | Sandesh | Patil   | NULL     | NULL     |
+|    4 | Rohan   | Panale  | NULL     | NULL     |
+|    5 | Aditya  | Patil   | NULL     | NULL     |
+|    6 | Vishnu  | Kendre  | NULL     | NULL     |
++------+---------+---------+----------+----------+
+6 rows in set (0.00 sec)
+
+mysql> update t1 set subject1="Economics",subject2="English" where id is 2;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '2' at line 1
+mysql> update t1 set subject1="Economics",subject2="English" where id = 2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set subject1="C++",subject2="Python" where id = 3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set subject1="Java",subject2="DotNet" where id = 4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set subject1="DBMS",subject2="M2" where id = 5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set subject1="WebTech",subject2="M1" where id = 6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select * from t1;
++------+---------+---------+-----------+----------+
+| id   | name    | surname | subject1  | subject2 |
++------+---------+---------+-----------+----------+
+|    1 | Asit    | More    | Maths     | Science  |
+|    2 | Shashi  | Tharoor | Economics | English  |
+|    3 | Sandesh | Patil   | C++       | Python   |
+|    4 | Rohan   | Panale  | Java      | DotNet   |
+|    5 | Aditya  | Patil   | DBMS      | M2       |
+|    6 | Vishnu  | Kendre  | WebTech   | M1       |
++------+---------+---------+-----------+----------+
+6 rows in set (0.00 sec)
+
+mysql> select '12'+ 23;
++----------+
+| '12'+ 23 |
++----------+
+|       35 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select '1a2'+ 23;
++-----------+
+| '1a2'+ 23 |
++-----------+
+|        24 |
++-----------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select '1a2'+ 23 A1;
++----+
+| A1 |
++----+
+| 24 |
++----+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select '1a2'/ 23 A1;
++----------------------+
+| A1                   |
++----------------------+
+| 0.043478260869565216 |
++----------------------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select '1a2'div 23 A1;
++------+
+| A1   |
++------+
+|    0 |
++------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select 'b'=0;
++-------+
+| 'b'=0 |
++-------+
+|     1 |
++-------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select 'b'=1;
++-------+
+| 'b'=1 |
++-------+
+|     0 |
++-------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> select '1b'=0;
++--------+
+| '1b'=0 |
++--------+
+|      0 |
++--------+
+1 row in set, 1 warning (0.00 sec)
+
+mysql> show variables like 'auto%';
++--------------------------+-------+
+| Variable_name            | Value |
++--------------------------+-------+
+| auto_generate_certs      | ON    |
+| auto_increment_increment | 1     |
+| auto_increment_offset    | 1     |
+| autocommit               | OFF   |
+| automatic_sp_privileges  | ON    |
++--------------------------+-------+
+5 rows in set (0.01 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> select 41%2,41 mod 2;
++------+----------+
+| 41%2 | 41 mod 2 |
++------+----------+
+|    1 |        1 |
++------+----------+
+1 row in set (0.00 sec)
+
+mysql> select 41%3,41 mod 3;
++------+----------+
+| 41%3 | 41 mod 3 |
++------+----------+
+|    2 |        2 |
++------+----------+
+1 row in set (0.00 sec)
+
+mysql> select 40%2 ,42 mod 2;
++------+----------+
+| 40%2 | 42 mod 2 |
++------+----------+
+|    0 |        0 |
++------+----------+
+1 row in set (0.00 sec)
+
+mysql> select 40%2 R1,42 mod 2 R2;
++------+------+
+| R1   | R2   |
++------+------+
+|    0 |    0 |
++------+------+
+1 row in set (0.00 sec)
+
+mysql> alter table t1 add column marks int(10) values (10),(45),(67),(23),(85),(67);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'values (10),(45),(67),(23),(85),(67)' at line 1
+mysql> alter table t1 add column marks int(10);
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> desc t1;
++----------+-------------+------+-----+---------+-------+
+| Field    | Type        | Null | Key | Default | Extra |
++----------+-------------+------+-----+---------+-------+
+| id       | int         | YES  |     | NULL    |       |
+| name     | varchar(20) | YES  |     | NULL    |       |
+| surname  | varchar(20) | YES  |     | NULL    |       |
+| subject1 | varchar(20) | YES  |     | NULL    |       |
+| subject2 | varchar(20) | YES  |     | NULL    |       |
+| marks    | int         | YES  |     | NULL    |       |
++----------+-------------+------+-----+---------+-------+
+6 rows in set (0.00 sec)
+
+mysql> select * from t1;
++------+---------+---------+-----------+----------+-------+
+| id   | name    | surname | subject1  | subject2 | marks |
++------+---------+---------+-----------+----------+-------+
+|    1 | Asit    | More    | Maths     | Science  |  NULL |
+|    2 | Shashi  | Tharoor | Economics | English  |  NULL |
+|    3 | Sandesh | Patil   | C++       | Python   |  NULL |
+|    4 | Rohan   | Panale  | Java      | DotNet   |  NULL |
+|    5 | Aditya  | Patil   | DBMS      | M2       |  NULL |
+|    6 | Vishnu  | Kendre  | WebTech   | M1       |  NULL |
++------+---------+---------+-----------+----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> update t1 set marks=67 where id=1;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks=45 where id=2;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks=78 here id=3 ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'here id=3' at line 1
+mysql> update t1 set marks=78 here id=3;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'here id=3' at line 1
+mysql> update t1 set marks=78 where id=3;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks=68 where id=4;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks=62 where id=5;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> update t1 set marks=82 where id=6;
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> select name,surname,subject1,subject2,marks from t1;
++---------+---------+-----------+----------+-------+
+| name    | surname | subject1  | subject2 | marks |
++---------+---------+-----------+----------+-------+
+| Asit    | More    | Maths     | Science  |    67 |
+| Shashi  | Tharoor | Economics | English  |    45 |
+| Sandesh | Patil   | C++       | Python   |    78 |
+| Rohan   | Panale  | Java      | DotNet   |    68 |
+| Aditya  | Patil   | DBMS      | M2       |    62 |
+| Vishnu  | Kendre  | WebTech   | M1       |    82 |
++---------+---------+-----------+----------+-------+
+6 rows in set (0.00 sec)
+
+mysql> alter table t1 change marks total_marks int(10);
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> select name,surname,subject1,subject2,marks from t1;
+ERROR 1054 (42S22): Unknown column 'marks' in 'field list'
+mysql> select name,surname,subject1,subject2,total_marks from t1;
++---------+---------+-----------+----------+-------------+
+| name    | surname | subject1  | subject2 | total_marks |
++---------+---------+-----------+----------+-------------+
+| Asit    | More    | Maths     | Science  |          67 |
+| Shashi  | Tharoor | Economics | English  |          45 |
+| Sandesh | Patil   | C++       | Python   |          78 |
+| Rohan   | Panale  | Java      | DotNet   |          68 |
+| Aditya  | Patil   | DBMS      | M2       |          62 |
+| Vishnu  | Kendre  | WebTech   | M1       |          82 |
++---------+---------+-----------+----------+-------------+
+6 rows in set (0.00 sec)
+
+mysql> select name,surname,subject1,subject2,total_marks+5 from t1;
++---------+---------+-----------+----------+---------------+
+| name    | surname | subject1  | subject2 | total_marks+5 |
++---------+---------+-----------+----------+---------------+
+| Asit    | More    | Maths     | Science  |            72 |
+| Shashi  | Tharoor | Economics | English  |            50 |
+| Sandesh | Patil   | C++       | Python   |            83 |
+| Rohan   | Panale  | Java      | DotNet   |            73 |
+| Aditya  | Patil   | DBMS      | M2       |            67 |
+| Vishnu  | Kendre  | WebTech   | M1       |            87 |
++---------+---------+-----------+----------+---------------+
+6 rows in set (0.00 sec)
+
+mysql> commit;
+Query OK, 0 rows affected (0.00 sec)
