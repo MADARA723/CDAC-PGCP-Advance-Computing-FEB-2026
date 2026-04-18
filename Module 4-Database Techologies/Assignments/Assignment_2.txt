@@ -1,0 +1,52 @@
+**************************************Queries on Select command with Where and Date function.***************************************
+
+
+Q.1:-Display the Employee Name, Job, and Start Date of Employees hired from February 1981 to May 1981.
+
+Query:-select ename 'Employee Name',Job,hiredate as 'Start Date' from emp where hiredate BETWEEN '1981-02-01' AND '1981-05-31';
+
+Output:-
+
++---------------+----------+------------+
+| Employee Name | Job      | Start Date |
++---------------+----------+------------+
+| ALLEN         | SALESMAN | 1981-02-20 |
+| WARD          | SALESMAN | 1981-02-22 |
+| JONES         | MANAGER  | 1981-04-02 |
+| BLAKE         | MANAGER  | 1981-05-01 |
++---------------+----------+------------+
+4 rows in set (0.00 sec)
+
+Q.2:-Display the Name and Hiredate of every Employee who was hired in 1982.
+
+Query:- select Ename as Name,hiredate from emp where year(hiredate)=1982;
+
+Output:-
+
++---------+------------+
+| Name    | hiredate   |
++---------+------------+
+| SCOTT   | 1982-12-09 |
+| HOFFMAN | 1982-03-24 |
+| MILLER  | 1982-01-23 |
+| ALEX    | 1982-01-24 |
++---------+------------+
+4 rows in set (0.00 sec)
+
+Q.3 Write a query to display the current date. Label the column as Current Date.
+
+Query:- select curdate() as 'Current Date';
+
+
+Output:-
+
++--------------+
+| Current Date |
++--------------+
+| 2026-04-17   |
++--------------+
+1 row in set (0.00 sec)
+
+Q.4 Display the Employee’s Name, Hiredate, Salary and Review Date, which is first Monday after six months of service. 
+
+Query:- 
