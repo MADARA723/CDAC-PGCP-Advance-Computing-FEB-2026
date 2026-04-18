@@ -1,0 +1,21 @@
+the entire contents of EMP table.
+Print the name of employees.
+Retrieve the list of names and jobs of employees.
+List of various department available from dept table.
+List all information about the Employees of the EMP table.
+Show the information of the Department table.
+Display the contents of the column Empno, Ename as Employee Name and Sal from the Emp table.
+Display the Job, Comm and Ename from the Emp table with Customized column headings.
+Display the location as “Location” and names of all the departments as “Department Names”.
+List the different Managers Codes
+Write a query, which concatenates the Emp No, Name and Mgr Code. Display output with spaces in the columns. 
+Create a query to display all the data from the EMP table, separate each column by a comma.
+Modify the above query to add a column that will subtract the Old Salary from the New Salary. 
+Write a query that produces the following for each employee as- 
+<employee name> earns <salary> monthly, but wants salary <3 times salary>. Label the columns Dream Salaries.
+Display different types of positions available in the Company.
+Using the sales table, you need to report the following 
+Appropriate column heading should be given for all the columns.
+
+
+

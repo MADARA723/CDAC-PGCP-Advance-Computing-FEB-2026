@@ -1,0 +1,29 @@
+Display the Employee Name, Job, and Start Date of Employees hired from February 1981 to May 1981.
+Display the Name and Hiredate of every Employee who was hired in 1982.
+Write a query to display the current date. Label the column as Current Date.
+Display the Employee’s Name, Hiredate, Salary and Review Date, which is first Monday after six months of service.
+Modify the query to display the dates as “Sunday, the Seventh of September, 1981”.
+Create a query to display the name and salary for all Employees. Format the salary to be 15 characters long by adding ‘$’.
+Display the Name, Hiredate and day of the week on which the employees started. Order the results by the Day of the week starting with Monday.
+Display details of orders received in the year 1986. 
+Write a query to find out the DAY (for example, SUNDAY) of the current date.
+Display the name and the date of joining of the employees who belong to department number 10. The date of joining should be formatted. For eg. if it is ‘10-JUN-97’ it should be displayed as Fifteenth JUNE, 1997. The name of the employee should be in upper case.
+Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
+List employee details who have joined in December.
+Display day on which KING joined.
+Display month on which MARTIN joined.
+Find number of days elapsed between today’s date and hiredate of ‘ADAMS’.
+Print the date, 15 days alter today’s date.
+List all employee hired in the month of December.
+List all employee hired after 1980.
+Display names and jobs of employee in the format SMITH-CLERK.
+Show the length of names in EMP table. Eliminate duplicate length. Do not show the names.
+List the names and hiredate of EMP in dept 20, display hiredate formatted as 12/03/1984.
+Find the day of week on which SMITH joined.
+Retrieve the ANALYST record with hiredate formatted as ‘The 3rd of Oct. 1984’.
+Calculate the total compensation expensive for each dept in 1 year. Assume that employees, who don't earn commission, receive non-monetary benefits than are worth Rs.1000 a month.
+Display the Names of the Managers as follows-
+If the employee code is 7788 the Manager is CLARK
+If the employee code is 7698 the Manager is BLAKE
+If the employee code is 7566 the Manager is JONES
+For all other Employees the Manager is KING
