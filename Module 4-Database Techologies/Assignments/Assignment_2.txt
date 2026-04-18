@@ -49,4 +49,107 @@ Output:-
 
 Q.4 Display the Employee’s Name, Hiredate, Salary and Review Date, which is first Monday after six months of service. 
 
-Query:- 
+Query:- select ename 'Employee name', Hiredate,sal Salary from emp where Weekday(date_add(hiredate, Interval 6 month))=0;
+
+Output:-
+
++---------------+------------+--------+
+| Employee name | Hiredate   | Salary |
++---------------+------------+--------+
+| KING          | 1981-11-17 |   5000 |
+| TURNER        | 1981-09-08 |   1500 |
++---------------+------------+--------+
+2 rows in set (0.00 sec)
+
+Q.5  Modify the query to display the dates as “Sunday, the Seventh of September, 1981”. 
+
+Query:-   select concat(date_format(hiredate,'%W'),', ','the ',date_format(hiredate,'%D'),' of the ',date_format(hiredate,'%M'), ', ',date_format(hiredate,'%Y')) Date from emp;
+
+Query(easy):- SELECT DATE_FORMAT(hiredate, '%W, the %D of the %M, %Y') AS Date 
+FROM emp;
+
+
+Output:-
+
++-------------------------------------------+
+| Date                                      |
++-------------------------------------------+
+| Sunday, the 19th of the July, 1981        |
+| Sunday, the 19th of the July, 1981        |
+| Sunday, the 19th of the July, 1981        |
+| Sunday, the 19th of the July, 1981        |
+| Wednesday, the 17th of the December, 1980 |
+| Thursday, the 31st of the December, 1981  |
+| Sunday, the 19th of the July, 1981        |
+| Friday, the 20th of the February, 1981    |
+| Sunday, the 22nd of the February, 1981    |
+| Thursday, the 2nd of the April, 1981      |
+| Monday, the 28th of the September, 1981   |
+| Friday, the 1st of the May, 1981          |
+| Tuesday, the 9th of the June, 1981        |
+| Thursday, the 9th of the December, 1982   |
+| Tuesday, the 17th of the November, 1981   |
+| Tuesday, the 9th of the August, 1983      |
+| Tuesday, the 8th of the September, 1981   |
+| Wednesday, the 12th of the January, 1983  |
+| Tuesday, the 9th of the August, 1983      |
+| Tuesday, the 9th of the August, 1983      |
+| Thursday, the 3rd of the December, 1981   |
+| Thursday, the 3rd of the December, 1981   |
+| Wednesday, the 24th of the March, 1982    |
+| Thursday, the 14th of the February, 1980  |
+| Saturday, the 23rd of the January, 1982   |
+| Thursday, the 14th of the February, 1980  |
+| Sunday, the 24th of the January, 1982     |
+| Sunday, the 19th of the July, 1981        |
+| Sunday, the 19th of the July, 1981        |
+| Sunday, the 19th of the July, 1981        |
++-------------------------------------------+
+30 rows in set (0.00 sec)
+
+Q.6 :- Create a query to display the name and salary for all Employees. Format the salary to be 15 characters long by adding ‘$’.
+
+Query:- select ename 'Employee Name',RPAD(sal,15,' $') as Salary from emp;
+
+Output:-
+
++---------------+-----------------+
+| Employee Name | Salary          |
++---------------+-----------------+
+| GITA          | 1750 $ $ $ $ $  |
+| VRUSHALI      | 1750 $ $ $ $ $  |
+| SHARMIN       | 1750 $ $ $ $ $  |
+| BANDISH       | 1750 $ $ $ $ $  |
+| SMITH         | 800 $ $ $ $ $ $ |
+| AARAV         | 3350 $ $ $ $ $  |
+| THOMAS        | 1750 $ $ $ $ $  |
+| ALLEN         | 1600 $ $ $ $ $  |
+| WARD          | 1250 $ $ $ $ $  |
+| JONES         | 2975 $ $ $ $ $  |
+| MARTIN        | 1250 $ $ $ $ $  |
+| BLAKE         | 2850 $ $ $ $ $  |
+| CLARK         | 2450 $ $ $ $ $  |
+| SCOTT         | 3000 $ $ $ $ $  |
+| KING          | 5000 $ $ $ $ $  |
+| FRED          | 5000 $ $ $ $ $  |
+| TURNER        | 1500 $ $ $ $ $  |
+| ADAMS         | 1100 $ $ $ $ $  |
+| Ruhan         | 2000 $ $ $ $ $  |
+| Neel          | 1000 $ $ $ $ $  |
+| JAMES         | 950 $ $ $ $ $ $ |
+| FORD          | 3000 $ $ $ $ $  |
+| HOFFMAN       | 4150 $ $ $ $ $  |
+| GRASS         | 2575 $ $ $ $ $  |
+| MILLER        | 1300 $ $ $ $ $  |
+| AARUSH        | 1350 $ $ $ $ $  |
+| ALEX          | 1250 $ $ $ $ $  |
+| NATASHA       | 1750 $ $ $ $ $  |
+| SANGITA       | 1750 $ $ $ $ $  |
+| SUPRIYA       | 1750 $ $ $ $ $  |
++---------------+-----------------+
+30 rows in set (0.00 sec)
+
+Q.7:-Display the Name, Hiredate and day of the week on which the employees started. Order the results by the e Employee Name, Job, aDay of the week starting with Monday.
+
+
+
