@@ -228,27 +228,11 @@ Output:-
 +---------------+--------------------+
 5 rows in set (0.00 sec)
 
-=========================================================================================================================================
-Q.11:- Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
 
-Query:-  select ucase(ename) 'Employee Name',date_format(hiredate,'%D %M,%Y') 'Date of Joining' from emp where deptno=10;
-
-Output:-
-
-+---------------+--------------------+
-| Employee Name | Date of Joining    |
-+---------------+--------------------+
-| AARAV         | 31st December,1981 |
-| THOMAS        | 19th July,1981     |
-| CLARK         | 9th June,1981      |
-| KING          | 17th November,1981 |
-| MILLER        | 23rd January,1982  |
-+---------------+--------------------+
-5 rows in set (0.00 sec)
 
 =========================================================================================================================================
 
-Q.12:-Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
+Q.11:-Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
 
 Query:-  select orderdate,shipdate,datediff(shipdate,orderdate) as datedifference from ord;
 
@@ -294,7 +278,7 @@ Output:-
 
 ========================================================================================================================================
 
-Q.13:- List employee details who have joined in December.
+Q.12:- List employee details who have joined in December. 
 
 Query:- select * from emp where month(hiredate)=12;
 
@@ -311,3 +295,42 @@ Output:-
 +-------+-------+--------+---------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
 5 rows in set (0.00 sec)
 
+==============================================================================================================================================
+
+Q.13:- Display day on which KING joined.
+
+Query:-select ename 'Employee Name',date_format(hiredate,'%W') 'Day Joined',hiredate HIREDATE from emp where ename='KING';
+
+Output:-
++---------------+------------+------------+
+| Employee Name | Day Joined | HIREDATE   |
++---------------+------------+------------+
+| KING          | Tuesday    | 1981-11-17 |
++---------------+------------+------------+
+1 row in set (0.00 sec)
+
+Q.14:- Display month on which MARTIN joined.
+
+Query:-select ename 'Employee Name',date_format(hiredate,'%M') 'Month Joined',hiredate HIREDATE from emp where ename='MARTIN';
+
+Output:-
+
++---------------+--------------+------------+
+| Employee Name | Month Joined | HIREDATE   |
++---------------+--------------+------------+
+| MARTIN        | September    | 1981-09-28 |
++---------------+--------------+------------+
+1 row in set (0.00 sec)
+
+Q.15:-Find number of days elapsed between today’s date and hiredate of ‘ADAMS’.
+
+Query:- select curdate(),hiredate,datediff(curdate(),hiredate) as DATEDIFF from emp where ename='ADAMS';
+
+
+Output:-
++------------+------------+----------+
+| curdate()  | hiredate   | DATEDIFF |
++------------+------------+----------+
+| 2026-04-20 | 1983-01-12 |    15804 |
++------------+------------+----------+
+1 row in set (0.00 sec)
