@@ -524,8 +524,71 @@ Output:-
 +---------+-----------------------------------------+
 3 rows in set (0.00 sec)
 
+=========================================================================================================================================================
+
+Q.24:-Calculate the total compensation expensive for each dept in 1 year. Assume that employees, who don't earn commission, receive non-monetary benefits than are worth Rs.1000 a month.
+
+Query:-select deptno,SUM((sal+ case when comm is null then 1000 else comm end)*12) as Total_Annual_Compensation from emp group by deptno;
+
+Output:-
+
++--------+---------------------------+
+| deptno | Total_Annual_Compensation |
++--------+---------------------------+
+|     10 |                    229800 |
+|     20 |                    328500 |
+|     30 |                    423900 |
+|     50 |                     99000 |
+|     60 |                     60000 |
++--------+---------------------------+
+5 rows in set (0.01 sec)
 
 
+Q.25:-Display the Names of the Managers as follows- 
+a. If the employee code is 7788 the Manager is CLARK
+b. If the employee code is 7698 the Manager is BLAKE
+c. If the employee code is 7566 the Manager is JONES
+For all other Employees the Manager is KING
+
+Query:-select ename , case when mgr=7788 then 'CLERK' when mgr=7698 then 'BLAKE' when mgr=7566 then 'JONES' else 'KING' end as "Manager Names" from emp ;
+
+Output:-
+
++----------+---------------+
+| ename    | Manager Names |
++----------+---------------+
+| GITA     | KING          |
+| VRUSHALI | KING          |
+| SHARMIN  | KING          |
+| BANDISH  | KING          |
+| SMITH    | KING          |
+| AARAV    | KING          |
+| THOMAS   | KING          |
+| ALLEN    | BLAKE         |
+| WARD     | BLAKE         |
+| JONES    | KING          |
+| MARTIN   | BLAKE         |
+| BLAKE    | KING          |
+| CLARK    | KING          |
+| SCOTT    | JONES         |
+| KING     | KING          |
+| FRED     | KING          |
+| TURNER   | BLAKE         |
+| ADAMS    | CLERK         |
+| Ruhan    | KING          |
+| Neel     | KING          |
+| JAMES    | BLAKE         |
+| FORD     | JONES         |
+| HOFFMAN  | JONES         |
+| GRASS    | KING          |
+| MILLER   | KING          |
+| AARUSH   | KING          |
+| ALEX     | BLAKE         |
+| NATASHA  | KING          |
+| SANGITA  | KING          |
+| SUPRIYA  | KING          |
++----------+---------------+
+30 rows in set (0.00 sec)
 
 
 
