@@ -327,13 +327,206 @@ Output:-
 
 Q.15:-Find number of days elapsed between today’s date and hiredate of ‘ADAMS’.
 
-Query:- select curdate(),hiredate,datediff(curdate(),hiredate) as DATEDIFF from emp where ename='ADAMS';
+Query:- select ename 'Employee Name',curdate(),hiredate,datediff(curdate(),hiredate) as DATEDIFF from emp where ename='ADAMS';
 
 
 Output:-
-+------------+------------+----------+
-| curdate()  | hiredate   | DATEDIFF |
-+------------+------------+----------+
-| 2026-04-20 | 1983-01-12 |    15804 |
-+------------+------------+----------+
++---------------+------------+------------+----------+
+| Employee Name | curdate()  | hiredate   | DATEDIFF |
++---------------+------------+------------+----------+
+| ADAMS         | 2026-04-20 | 1983-01-12 |    15804 |
++---------------+------------+------------+----------+
 1 row in set (0.00 sec)
+
+=============================================================================================================================================
+Q.16:- Print the date, 15 days alter today’s date.
+
+Query:-select curdate() as 'Todays Date',curdate()+interval 15 day as '15 Days' ;
+
+Output:-
+
++-------------+------------+
+| Todays Date | 15 Days    |
++-------------+------------+
+| 2026-04-20  | 2026-05-05 |
++-------------+------------+
+1 row in set (0.00 sec)
+
+===============================================================================================================================================
+
+Q.17:-List all employee hired in the month of December.
+
+Query:- select ename,hiredate as Hiredate from emp where date_format(hiredate,'%m')=12;
+
+Output:-
+
++-------+------------+
+| ename | Hiredate   |
++-------+------------+
+| SMITH | 1980-12-17 |
+| AARAV | 1981-12-31 |
+| SCOTT | 1982-12-09 |
+| JAMES | 1981-12-03 |
+| FORD  | 1981-12-03 |
++-------+------------+
+5 rows in set (0.00 sec)
+
+===============================================================================================================================================
+
+Q.18:-List all employee hired after 1980.
+
+Query:- select ename,hiredate as Hiredate from emp where date_format(hiredate,'%Y')>1980;
+
+Output:-
+
++----------+------------+
+| ename    | Hiredate   |
++----------+------------+
+| GITA     | 1981-07-19 |
+| VRUSHALI | 1981-07-19 |
+| SHARMIN  | 1981-07-19 |
+| BANDISH  | 1981-07-19 |
+| AARAV    | 1981-12-31 |
+| THOMAS   | 1981-07-19 |
+| ALLEN    | 1981-02-20 |
+| WARD     | 1981-02-22 |
+| JONES    | 1981-04-02 |
+| MARTIN   | 1981-09-28 |
+| BLAKE    | 1981-05-01 |
+| CLARK    | 1981-06-09 |
+| SCOTT    | 1982-12-09 |
+| KING     | 1981-11-17 |
+| FRED     | 1983-08-09 |
+| TURNER   | 1981-09-08 |
+| ADAMS    | 1983-01-12 |
+| Ruhan    | 1983-08-09 |
+| Neel     | 1983-08-09 |
+| JAMES    | 1981-12-03 |
+| FORD     | 1981-12-03 |
+| HOFFMAN  | 1982-03-24 |
+| MILLER   | 1982-01-23 |
+| ALEX     | 1982-01-24 |
+| NATASHA  | 1981-07-19 |
+| SANGITA  | 1981-07-19 |
+| SUPRIYA  | 1981-07-19 |
++----------+------------+
+27 rows in set (0.00 sec)
+
+============================================================================================================================================
+
+Q.19:-Display names and jobs of employee in the format SMITH-CLERK.
+
+Query:- select concat(ename,'-',Job) as 'Name&Job' from emp;
+
+Output:-
++------------------------------+
+| Name&Job                     |
++------------------------------+
+| GITA-Compliance officers     |
+| VRUSHALI-Compliance officers |
+| SHARMIN-Public Relation      |
+| BANDISH-Public Relation      |
+| SMITH-CLERK                  |
+| AARAV-CLERK                  |
+| THOMAS-CLERK                 |
+| ALLEN-SALESMAN               |
+| WARD-SALESMAN                |
+| JONES-MANAGER                |
+| MARTIN-SALESMAN              |
+| BLAKE-MANAGER                |
+| CLARK-MANAGER                |
+| SCOTT-ANALYST                |
+| KING-PRESIDENT               |
+| FRED-vice PRESIDENT          |
+| TURNER-SALESMAN              |
+| ADAMS-CLERK                  |
+| Ruhan-Network                |
+| Neel-vice PRESIDENT          |
+| JAMES-CLERK                  |
+| FORD-ANALYST                 |
+| HOFFMAN-MANAGER              |
+| GRASS-SALESMAN               |
+| MILLER-CLERK                 |
+| AARUSH-SALESMAN              |
+| ALEX-MANAGER                 |
+| NATASHA-CLERK                |
+| SANGITA-Compliance officers  |
+| SUPRIYA-ANALYST              |
++------------------------------+
+30 rows in set (0.00 sec)
+======================================================================================================================================================
+
+Q.20:-Show the length of names in EMP table. Eliminate duplicate length. Do not show the names.
+
+Query:- select distinct length(ename) DistinctNames from emp;
+
+Output:-
+
++---------------+
+| DistinctNames |
++---------------+
+|             4 |
+|             8 |
+|             7 |
+|             5 |
+|             6 |
++---------------+
+5 rows in set (0.00 sec)
+============================================================================================================================================================
+
+Q.21:-List the names and hiredate of EMP in dept 20, display hiredate formatted as 12/03/1984.
+
+Query:-select ename as 'Employee Names',date_format(hiredate,'%d/%m/%y') from emp where deptno=20;
+
+Output:-
++----------------+----------------------------------+
+| Employee Names | date_format(hiredate,'%d/%m/%y') |
++----------------+----------------------------------+
+| SHARMIN        | 19/07/81                         |
+| BANDISH        | 19/07/81                         |
+| SMITH          | 17/12/80                         |
+| JONES          | 02/04/81                         |
+| SCOTT          | 09/12/82                         |
+| FRED           | 09/08/83                         |
+| ADAMS          | 12/01/83                         |
+| FORD           | 03/12/81                         |
++----------------+----------------------------------+
+8 rows in set (0.00 sec)
+
+===========================================================================================================================================================
+
+Q.22:-Find the day of week on which SMITH joined.
+
+Query:- select ename,hiredate ,date_format(hiredate,'%W') from emp where ename='SMITH';
+
+Output:-
++-------+------------+----------------------------+
+| ename | hiredate   | date_format(hiredate,'%W') |
++-------+------------+----------------------------+
+| SMITH | 1980-12-17 | Wednesday                  |
++-------+------------+----------------------------+
+1 row in set (0.00 sec)
+
+========================================================================================================================================================
+
+Q.23:-Retrieve the ANALYST record with hiredate formatted as ‘The 3rd of Oct. 1984’.
+
+Query:-  select Job,date_format(hiredate,'The %D of %M.%Y') from emp where Job='ANALYST';
+
+Output:-
+
++---------+-----------------------------------------+
+| Job     | date_format(hiredate,'The %D of %M.%Y') |
++---------+-----------------------------------------+
+| ANALYST | The 9th of December.1982                |
+| ANALYST | The 3rd of December.1981                |
+| ANALYST | The 19th of July.1981                   |
++---------+-----------------------------------------+
+3 rows in set (0.00 sec)
+
+
+
+
+
+
+
