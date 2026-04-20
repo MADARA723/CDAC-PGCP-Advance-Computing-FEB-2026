@@ -17,6 +17,8 @@ Output:-
 +---------------+----------+------------+
 4 rows in set (0.00 sec)
 
+======================================================================================================================================
+
 Q.2:-Display the Name and Hiredate of every Employee who was hired in 1982.
 
 Query:- select Ename as Name,hiredate from emp where year(hiredate)=1982;
@@ -33,6 +35,8 @@ Output:-
 +---------+------------+
 4 rows in set (0.00 sec)
 
+=====================================================================================================================================
+
 Q.3 Write a query to display the current date. Label the column as Current Date.
 
 Query:- select curdate() as 'Current Date';
@@ -47,6 +51,8 @@ Output:-
 +--------------+
 1 row in set (0.00 sec)
 
+======================================================================================================================================
+
 Q.4 Display the Employee’s Name, Hiredate, Salary and Review Date, which is first Monday after six months of service. 
 
 Query:- select ename 'Employee name', Hiredate,sal Salary from emp where Weekday(date_add(hiredate, Interval 6 month))=0;
@@ -60,6 +66,8 @@ Output:-
 | TURNER        | 1981-09-08 |   1500 |
 +---------------+------------+--------+
 2 rows in set (0.00 sec)
+
+======================================================================================================================================
 
 Q.5  Modify the query to display the dates as “Sunday, the Seventh of September, 1981”. 
 
@@ -107,6 +115,8 @@ Output:-
 +-------------------------------------------+
 30 rows in set (0.00 sec)
 
+======================================================================================================================================
+
 Q.6 :- Create a query to display the name and salary for all Employees. Format the salary to be 15 characters long by adding ‘$’.
 
 Query:- select ename 'Employee Name',RPAD(sal,15,' $') as Salary from emp;
@@ -149,7 +159,155 @@ Output:-
 +---------------+-----------------+
 30 rows in set (0.00 sec)
 
+========================================================================================================================================
+
 Q.7:-Display the Name, Hiredate and day of the week on which the employees started. Order the results by the e Employee Name, Job, aDay of the week starting with Monday.
 
+Query:- select ename Name,hiredate 'Date of Joining',date_format(hiredate,'%W') 'Day of Joining' from emp where dayname(hiredate)='Monday' order by ename,job;
 
+Output:-
+
++--------+-----------------+----------------+
+| Name   | Date of Joining | Day of Joining |
++--------+-----------------+----------------+
+| MARTIN | 1981-09-28      | Monday         |
++--------+-----------------+----------------+
+1 row in set (0.00 sec)
+
+========================================================================================================================================
+
+Q.8:- Display details of orders received in the year 1986.  
+
+Query:- select * from ord where year(orderdate)=1986;
+
+Output:- 
++-------+------------+----------+--------+------------+----------------+------------+------------+---------+
+| ORDID | ORDERDATE  | COMMPLAN | CUSTID | SHIPDATE   | actualShipDate | STATUSDATE | STATUS     | TOTAL   |
++-------+------------+----------+--------+------------+----------------+------------+------------+---------+
+|   601 | 1986-05-01 | A        |    106 | 1986-05-30 | 1986-06-02     | NULL       | In Process |    2.40 |
+|   602 | 1986-06-05 | B        |    102 | 1986-06-20 | NULL           | 1986-07-09 | On Hold    |   56.00 |
+|   603 | 1986-06-05 | NULL     |    102 | 1986-06-05 | 1986-06-07     | 1986-06-10 | Cancelled  |  224.00 |
+|   604 | 1986-06-15 | A        |    106 | 1986-05-30 | NULL           | 1986-07-04 | Resolved   |  698.00 |
+|   606 | 1986-07-14 | A        |    100 | 1986-07-30 | 1986-07-30     | NULL       | Shipped    |    3.40 |
+|   607 | 1986-07-18 | C        |    104 | 1986-07-18 | 1986-07-20     | NULL       | In Process |    5.60 |
+|   608 | 1986-07-25 | C        |    104 | 1986-07-25 | 1986-07-25     | NULL       | Shipped    |   35.20 |
+|   609 | 1986-08-01 | B        |    100 | 1986-08-15 | NULL           | 1986-08-19 | On Hold    |   97.50 |
+|   622 | 1986-12-31 | a        |    105 | 1987-01-01 | NULL           | 1987-01-06 | Delivered  | 1125.00 |
++-------+------------+----------+--------+------------+----------------+------------+------------+---------+
+9 rows in set (0.00 sec)
+
+========================================================================================================================================
+
+Q.9:-Write a query to find out the DAY (for example, SUNDAY) of the current date.
+
+Query:-   select date_format(curdate(),'%W') 'Todays Day';
+
+Output:-
+
++------------+
+| Todays Day |
++------------+
+| Monday     |
++------------+
+1 row in set (0.00 sec)
+
+=========================================================================================================================================
+Q.10:-Display the name and the date of joining of the employees who belong to department number 10. The date of joining should be formatted. For eg. if it is ‘10-JUN-97’ it should be displayed as Fifteenth JUNE, 1997. The name of the employee should be in upper case.
+
+Query:- select ucase(ename) 'Employee Name',date_format(hiredate,'%D %M,%Y') 'Date of Joining' from emp where deptno=10;
+
+Output:-
++---------------+--------------------+
+| Employee Name | Date of Joining    |
++---------------+--------------------+
+| AARAV         | 31st December,1981 |
+| THOMAS        | 19th July,1981     |
+| CLARK         | 9th June,1981      |
+| KING          | 17th November,1981 |
+| MILLER        | 23rd January,1982  |
++---------------+--------------------+
+5 rows in set (0.00 sec)
+
+=========================================================================================================================================
+Q.11:- Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
+
+Query:-  select ucase(ename) 'Employee Name',date_format(hiredate,'%D %M,%Y') 'Date of Joining' from emp where deptno=10;
+
+Output:-
+
++---------------+--------------------+
+| Employee Name | Date of Joining    |
++---------------+--------------------+
+| AARAV         | 31st December,1981 |
+| THOMAS        | 19th July,1981     |
+| CLARK         | 9th June,1981      |
+| KING          | 17th November,1981 |
+| MILLER        | 23rd January,1982  |
++---------------+--------------------+
+5 rows in set (0.00 sec)
+
+=========================================================================================================================================
+
+Q.12:-Consider the Ord table. Find the difference between the Order Date and Ship Date in months as well as days. Label the columns appropriately.
+
+Query:-  select orderdate,shipdate,datediff(shipdate,orderdate) as datedifference from ord;
+
+Output:-
++------------+------------+----------------+
+| orderdate  | shipdate   | datedifference |
++------------+------------+----------------+
+| 1986-05-01 | 1986-05-30 |             29 |
+| 1986-06-05 | 1986-06-20 |             15 |
+| 1986-06-05 | 1986-06-05 |              0 |
+| 1986-06-15 | 1986-05-30 |            -16 |
+| 1986-07-14 | 1986-07-30 |             16 |
+| 1986-07-18 | 1986-07-18 |              0 |
+| 1986-07-25 | 1986-07-25 |              0 |
+| 1986-08-01 | 1986-08-15 |             14 |
+| 1987-01-07 | 1987-01-08 |              1 |
+| 1987-01-11 | 1987-01-11 |              0 |
+| 1987-01-15 | 1987-01-20 |              5 |
+| 1987-02-01 | 1987-02-01 |              0 |
+| 1987-02-01 | 1987-02-05 |              4 |
+| 1987-02-01 | 1987-02-06 |              5 |
+| 1987-02-03 | 1987-02-10 |              7 |
+| 1987-02-05 | 1987-03-03 |             26 |
+| 1987-02-15 | 1987-03-06 |             19 |
+| 1987-02-22 | 1987-02-04 |            -18 |
+| 1987-03-12 | 1987-03-12 |              0 |
+| 1987-03-15 | 1987-03-01 |            -14 |
+| 1986-12-31 | 1987-01-01 |              1 |
+| 1987-01-06 | 1987-01-06 |              0 |
+| 1987-01-09 | 1987-01-10 |              1 |
+| 1987-01-31 | 1987-02-01 |              1 |
+| 1987-02-13 | 1987-02-14 |              1 |
+| 1987-03-13 | 1987-03-14 |              1 |
+| 1987-03-14 | 1987-03-16 |              2 |
+| 1987-02-21 | 1987-02-22 |              1 |
+| 1987-02-23 | 1987-02-23 |              0 |
+| 1987-03-13 | 1987-03-14 |              1 |
+| 1987-03-14 | 1987-03-16 |              2 |
+| 1987-02-21 | 1987-02-22 |              1 |
+| 1987-02-23 | 1987-02-23 |              0 |
++------------+------------+----------------+
+33 rows in set (0.00 sec)
+
+========================================================================================================================================
+
+Q.13:- List employee details who have joined in December.
+
+Query:- select * from emp where month(hiredate)=12;
+
+Output:-
+
++-------+-------+--------+---------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME | GENDER | JOB     | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+-------+--------+---------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  7369 | SMITH | M      | CLERK   | 7902 | 1980-12-17 |  800 | NULL |     20 |       2 | TRITONE      | a12recmpm  | 7032300023 |        0 |
+|  7415 | AARAV | M      | CLERK   | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7788 | SCOTT | M      | ANALYST | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND   | a12recmpm  | NULL       |        1 |
+|  7900 | JAMES | M      | CLERK   | 7698 | 1981-12-03 |  950 | NULL |     30 |       2 | CRAZY LEADER | sales@2017 | 7132300042 |        1 |
+|  7902 | FORD  | M      | ANALYST | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO      | a12recmpm  | NULL       |        0 |
++-------+-------+--------+---------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+5 rows in set (0.00 sec)
 
