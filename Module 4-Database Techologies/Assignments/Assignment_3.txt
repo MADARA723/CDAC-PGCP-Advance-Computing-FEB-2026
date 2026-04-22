@@ -1,4 +1,4 @@
-Q.1:-List names of employees whose job is MANAGER.
+ Q.1:-List names of employees whose job is MANAGER.
 
 Query:-select ename 'Employee Name',Job from emp where job='MANAGER';
 
@@ -127,7 +127,7 @@ Output:-
 
 Q.7:-Display the details of the employees who have joined on 21-DEC-1990.
 
-Query:- select ename as 'Employee Name' from emp where date_format(hiredate,'%Y-%m-%d')='21-12-1990';
+Query:- select ename as 'Employee Name' from emp where date_format(hiredate,'%Y-%m-%d')='1989-12-21';
 
 Output:-
 
@@ -425,6 +425,198 @@ Output:-
 
 Q.18:-Display all the Names of the Employees whose Salary is either more than 1000 but not more than 2200.
 
-Query:-select 
+Query:- select ename 'Employee Name', sal from emp where sal>1000 and sal<2000;
+
+Output:-
++---------------+------+
+| Employee Name | sal  |
++---------------+------+
+| GITA          | 1750 |
+| VRUSHALI      | 1750 |
+| SHARMIN       | 1750 |
+| BANDISH       | 1750 |
+| THOMAS        | 1750 |
+| ALLEN         | 1600 |
+| WARD          | 1250 |
+| MARTIN        | 1250 |
+| TURNER        | 1500 |
+| ADAMS         | 1100 |
+| MILLER        | 1300 |
+| AARUSH        | 1350 |
+| ALEX          | 1250 |
+| NATASHA       | 1750 |
+| SANGITA       | 1750 |
+| SUPRIYA       | 1750 |
++---------------+------+
+16 rows in set (0.00 sec)
+
+=====================================================================================================================================================================================================================================
+
+Q.19:-Select Name & Salary of employees who are clerks.
+
+Query:- select ename as "Employee Name",sal as "Salary" from emp where job="CLERK";
+
+Output:-
+
++---------------+--------+
+| Employee Name | Salary |
++---------------+--------+
+| SMITH         |    800 |
+| AARAV         |   3350 |
+| THOMAS        |   1750 |
+| ADAMS         |   1100 |
+| JAMES         |    950 |
+| MILLER        |   1300 |
+| NATASHA       |   1750 |
++---------------+--------+
+7 rows in set (0.00 sec)
+
+===================================================================================================================================================================================================================================
+
+Q.20:-List the Department Number and Names of all Employees having Salary less than 2500.
+
+Query:-select deptno as "Department Number",ename "Employee Name" from emp where sal<2500;
+
+Output:-
+
++-------------------+---------------+------+
+| Department Number | Employee Name | sal  |
++-------------------+---------------+------+
+|                30 | GITA          | 1750 |
+|                50 | VRUSHALI      | 1750 |
+|                20 | SHARMIN       | 1750 |
+|                20 | BANDISH       | 1750 |
+|                20 | SMITH         |  800 |
+|                10 | THOMAS        | 1750 |
+|                30 | ALLEN         | 1600 |
+|                30 | WARD          | 1250 |
+|                30 | MARTIN        | 1250 |
+|                10 | CLARK         | 2450 |
+|                30 | TURNER        | 1500 |
+|                20 | ADAMS         | 1100 |
+|                60 | Ruhan         | 2000 |
+|                60 | Neel          | 1000 |
+|                30 | JAMES         |  950 |
+|                10 | MILLER        | 1300 |
+|                30 | AARUSH        | 1350 |
+|                30 | ALEX          | 1250 |
+|                30 | NATASHA       | 1750 |
+|                50 | SANGITA       | 1750 |
+|                50 | SUPRIYA       | 1750 |
++-------------------+---------------+------+
+21 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+Q.21:-List the Employee Number and the Name of the President.
+
+Query:-select empno "Employee Number",ename "Employee Name" from emp where Job="PRESIDENT";
+
+Output:-
+
++-----------------+---------------+
+| Employee Number | Employee Name |
++-----------------+---------------+
+|            7839 | KING          |
++-----------------+---------------+
+1 row in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+Q.22:-Display Names whose job is either Clerk or Analyst or Salesman.
+
+Query:-select ename as 'Names' from emp where job in ('CLERK','ANALYST','SALESMAN');
+
+Output:-
+
++---------+
+| Names   |
++---------+
+| SMITH   |
+| AARAV   |
+| THOMAS  |
+| ALLEN   |
+| WARD    |
+| MARTIN  |
+| SCOTT   |
+| TURNER  |
+| ADAMS   |
+| JAMES   |
+| FORD    |
+| GRASS   |
+| MILLER  |
+| AARUSH  |
+| NATASHA |
+| SUPRIYA |
++---------+
+16 rows in set (0.00 sec)
+
+==================================================================================================================================================================================================================================================
+
+Q.23:-List the Employees whose names start with ‘B’ or ‘M’
+
+Query:-select ename 'Employee Name' from emp where ename like 'B%' or  ename like 'M%';
+
+Output:-
+
++---------------+
+| Employee Name |
++---------------+
+| BANDISH       |
+| MARTIN        |
+| BLAKE         |
+| MILLER        |
++---------------+
+4 rows in set (0.00 sec)
+
+==================================================================================================================================================================================================================================================
+
+Q.24:-Give a list of Employees sorted in alphabetic order of Names.
+
+Query:-select ename as 'Employee Names' from emp order by ename;
+
+Output:-
+
++----------------+
+| Employee Names |
++----------------+
+| AARAV          |
+| AARUSH         |
+| ADAMS          |
+| ALEX           |
+| ALLEN          |
+| BANDISH        |
+| BLAKE          |
+| CLARK          |
+| FORD           |
+| FRED           |
+| GITA           |
+| GRASS          |
+| HOFFMAN        |
+| JAMES          |
+| JONES          |
+| KING           |
+| MARTIN         |
+| MILLER         |
+| NATASHA        |
+| Neel           |
+| Ruhan          |
+| SANGITA        |
+| SCOTT          |
+| SHARMIN        |
+| SMITH          |
+| SUPRIYA        |
+| THOMAS         |
+| TURNER         |
+| VRUSHALI       |
+| WARD           |
++----------------+
+30 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+Q.25:-Find out details of Employees where Commission is greater than 5% of the Salary.
+
+Query:-
 
 Output:-
