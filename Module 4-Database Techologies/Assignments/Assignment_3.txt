@@ -347,26 +347,84 @@ Q.14.2:-Display the Name, Job and Dept No. of all the Employees who either work 
 
 Q.15:-Display the Employee Number, Name for Clerks and Managers who’s Salary is more than 1500.
 
-Query:- select empno 'Employee No.',ename 'Employee Name' from emp where job in ('CLERK','Manager') or sal=1500;
+Query:- select empno 'Employee No.',ename 'Employee Name',sal from emp where job in ('CLERK','Manager') and sal>1500;
+
+Output:-
++--------------+---------------+------+
+| Employee No. | Employee Name | sal  |
++--------------+---------------+------+
+|         7415 | AARAV         | 3350 |
+|         7421 | THOMAS        | 1750 |
+|         7566 | JONES         | 2975 |
+|         7698 | BLAKE         | 2850 |
+|         7782 | CLARK         | 2450 |
+|         7919 | HOFFMAN       | 4150 |
+|         8433 | NATASHA       | 1750 |
++--------------+---------------+------+
+7 rows in set (0.00 sec)
+
+================================================================================================================================================================================================================================
+
+
+Q.16:-Display the Name, Annual Salary and Commission as “Commission Earned” of all employees whose monthly
+salary is greater than their Commission. The output should be in decreasing order of salary. If two or more
+employees have same salary, then sort them by name within the highest order of salary.
+
+Query:- select ename 'Employee Name',sal*12 'Annual Salary',comm 'Commission Earned' from emp where sal> (case when comm is null then 0 else comm end) order by sal desc,ename asc;
 
 Output:-
 
-+--------------+---------------+
-| Employee No. | Employee Name |
-+--------------+---------------+
-|         7369 | SMITH         |
-|         7415 | AARAV         |
-|         7421 | THOMAS        |
-|         7566 | JONES         |
-|         7698 | BLAKE         |
-|         7782 | CLARK         |
-|         7844 | TURNER        |
-|         7876 | ADAMS         |
-|         7900 | JAMES         |
-|         7919 | HOFFMAN       |
-|         7934 | MILLER        |
-|         7949 | ALEX          |
-|         8433 | NATASHA       |
-+--------------+---------------+
-13 rows in set (0.00 sec)
++---------------+---------------+-------------------+
+| Employee Name | Annual Salary | Commission Earned |
++---------------+---------------+-------------------+
+| FRED          |         60000 |              NULL |
+| KING          |         60000 |              NULL |
+| HOFFMAN       |         49800 |              NULL |
+| AARAV         |         40200 |              NULL |
+| FORD          |         36000 |              NULL |
+| SCOTT         |         36000 |              NULL |
+| JONES         |         35700 |              NULL |
+| BLAKE         |         34200 |              NULL |
+| CLARK         |         29400 |              NULL |
+| Ruhan         |         24000 |              NULL |
+| BANDISH       |         21000 |              NULL |
+| GITA          |         21000 |              NULL |
+| NATASHA       |         21000 |              NULL |
+| SANGITA       |         21000 |              NULL |
+| SHARMIN       |         21000 |              NULL |
+| SUPRIYA       |         21000 |              NULL |
+| THOMAS        |         21000 |              NULL |
+| VRUSHALI      |         21000 |              NULL |
+| ALLEN         |         19200 |               300 |
+| TURNER        |         18000 |                 0 |
+| ALEX          |         15000 |               500 |
+| WARD          |         15000 |               500 |
+| ADAMS         |         13200 |              NULL |
+| Neel          |         12000 |              NULL |
+| JAMES         |         11400 |              NULL |
+| SMITH         |          9600 |              NULL |
++---------------+---------------+-------------------+
+26 rows in set (0.00 sec)
 
+=============================================================================================================================================================================================================================================
+
+Q.17:-Display the Name and Job of sales executives or managers whose names end with the letter ‘S’.
+
+Query:-  select ename 'Employee Name',Job from emp where job in ('Salesman','Manager') and ename like '%S';
+
+Output:-
++---------------+----------+
+| Employee Name | Job      |
++---------------+----------+
+| JONES         | MANAGER  |
+| GRASS         | SALESMAN |
++---------------+----------+
+2 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.18:-Display all the Names of the Employees whose Salary is either more than 1000 but not more than 2200.
+
+Query:-select 
+
+Output:-
