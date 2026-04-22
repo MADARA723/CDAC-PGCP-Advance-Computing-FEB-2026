@@ -1,0 +1,372 @@
+Q.1:-List names of employees whose job is MANAGER.
+
+Query:-select ename 'Employee Name',Job from emp where job='MANAGER';
+
+Output:-
+
++---------------+---------+
+| Employee Name | Job     |
++---------------+---------+
+| JONES         | MANAGER |
+| BLAKE         | MANAGER |
+| CLARK         | MANAGER |
+| HOFFMAN       | MANAGER |
+| ALEX          | MANAGER |
++---------------+---------+
+5 rows in set (0.00 sec)
+=======================================================================================================================================================================================================================================================
+
+Q.2:-List names of employee having salary greater than equal to 3000.
+
+Query:- select ename 'Employee Name',sal from emp where sal>=3000;
+
+Output:-
+
++---------------+------+
+| Employee Name | sal  |
++---------------+------+
+| AARAV         | 3350 |
+| SCOTT         | 3000 |
+| KING          | 5000 |
+| FRED          | 5000 |
+| FORD          | 3000 |
+| HOFFMAN       | 4150 |
++---------------+------+
+6 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================================
+
+Q.3:-List all employees having ‘A’ as second letter in their names.
+
+Query:- select ename 'Employee Name' from emp where ename like '_A%';
+
+Output:-
++---------------+
+| Employee Name |
++---------------+
+| BANDISH       |
+| AARAV         |
+| WARD          |
+| MARTIN        |
+| JAMES         |
+| AARUSH        |
+| NATASHA       |
+| SANGITA       |
++---------------+
+8 rows in set (0.00 sec)
+
+======================================================================================================================================================================================================================================================
+
+Q.4:-List the Employee Number, Name, Hiredate and Job Title of the Employees in the Department 10.
+
+Query:- select empno 'Employee No',ename 'Employee Name',Hiredate,Job 'Job Title' from emp where deptno=10;
+
+Output:-
+
++-------------+---------------+------------+-----------+
+| Employee No | Employee Name | Hiredate   | Job Title |
++-------------+---------------+------------+-----------+
+|        7415 | AARAV         | 1981-12-31 | CLERK     |
+|        7421 | THOMAS        | 1981-07-19 | CLERK     |
+|        7782 | CLARK         | 1981-06-09 | MANAGER   |
+|        7839 | KING          | 1981-11-17 | PRESIDENT |
+|        7934 | MILLER        | 1982-01-23 | CLERK     |
++-------------+---------------+------------+-----------+
+5 rows in set (0.00 sec)
+
+======================================================================================================================================================================================================================================================
+
+Q.5:-Display the details of those Employees who earn a monthly Salary of more than 2000.
+
+Query:- select * from emp where sal>2000;
+
+Output:-
+
++-------+---------+--------+----------------+------+------------+------+------+--------+---------+------------+------------+------------+----------+
+| EMPNO | ENAME   | GENDER | JOB            | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME  | PWD        | PHONE      | isActive |
++-------+---------+--------+----------------+------+------------+------+------+--------+---------+------------+------------+------------+----------+
+|  7415 | AARAV   | M      | CLERK          | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV      | NULL       | 7032300084 |        0 |
+|  7566 | JONES   | M      | MANAGER        | 7839 | 1981-04-02 | 2975 | NULL |     20 |       4 | HONEYCOMB  | a12recmpm  | 7132300039 |        1 |
+|  7698 | BLAKE   | M      | MANAGER        | 7839 | 1981-05-01 | 2850 | NULL |     30 |       1 | BIG BEN    | sales@2017 | 7132300027 |        1 |
+|  7782 | CLARK   | M      | MANAGER        | 7839 | 1981-06-09 | 2450 | NULL |     10 |       3 | CLARK      | r50mpm     | 7032300001 |        1 |
+|  7788 | SCOTT   | M      | ANALYST        | 7566 | 1982-12-09 | 3000 | NULL |     20 |       3 | WHITE SAND | a12recmpm  | NULL       |        1 |
+|  7839 | KING    | M      | PRESIDENT      | NULL | 1981-11-17 | 5000 | NULL |     10 |       1 | KING       | r50mpm     | 7132300081 |        1 |
+|  7840 | FRED    | M      | vice PRESIDENT | 7839 | 1983-08-09 | 5000 | NULL |     20 |       1 | SAND STONE | a12recmpm  | NULL       |        1 |
+|  7902 | FORD    | M      | ANALYST        | 7566 | 1981-12-03 | 3000 | NULL |     20 |       4 | CONBRIO    | a12recmpm  | NULL       |        0 |
+|  7919 | HOFFMAN | M      | MANAGER        | 7566 | 1982-03-24 | 4150 | NULL |     30 |       3 | INTERVAL   | sales@2017 | NULL       |        1 |
+|  7920 | GRASS   | M      | SALESMAN       | 7919 | 1980-02-14 | 2575 | 2700 |     30 |       5 | GRASS      | sales@2017 | NULL       |        1 |
++-------+---------+--------+----------------+------+------------+------+------+--------+---------+------------+------------+------------+----------+
+10 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================================
+
+Q.6.1:-Display the names of all Employees from Department 10 and 20 whose name start with “A” and ends with “B”.
+
+Query:-select ename from emp where deptno in (10,20) and ename like 'A%B';
+
+Output:-
+Empty set (0.00 sec)
+
+Q.6.2:-Display the names of all Employees from Department 10 and 20 whose name start with “A” and “B”.
+
+Query:- select ename from emp where deptno in (10,20) and ename like 'A%' or ename like 'B%' order by ename;
+
+Output:-
+
++---------+
+| ename   |
++---------+
+| AARAV   |
+| ADAMS   |
+| BANDISH |
+| BLAKE   |
++---------+
+4 rows in set (0.00 sec)
+
+==========================================================================================================================================================================================================================================================
+
+Q.7:-Display the details of the employees who have joined on 21-DEC-1990.
+
+Query:- select ename as 'Employee Name' from emp where date_format(hiredate,'%Y-%m-%d')='21-12-1990';
+
+Output:-
+
+Empty set (0.00 sec)
+
+=========================================================================================================================================================================================================================================================
+
+Q.8:-Display the Employee Code, Name, Job & Annual Salary for all Employees belonging to Department Number
+10.
+
+Query:- select empno as 'Employee Code',ename as 'Employee name',12*(sal+ case when comm is null then 0 else comm end)as 'Annual Salary' from emp where deptno=10;
+
+Output:-
++---------------+---------------+---------------+
+| Employee Code | Employee name | Annual Salary |
++---------------+---------------+---------------+
+|          7415 | AARAV         |         40200 |
+|          7421 | THOMAS        |         21000 |
+|          7782 | CLARK         |         29400 |
+|          7839 | KING          |         60000 |
+|          7934 | MILLER        |         31200 |
++---------------+---------------+---------------+
+5 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================================
+
+Q.9:-Display the details of the Employees who earn an Annual salary of more than 25000. Sort the records in the
+descending order of Salary.
+
+Query:-select ename 'Employee name',(sal*12) as 'Annual Salary' from emp where (sal*12)>25000 order by (sal*12) desc;
+
+Output:-
++---------------+---------------+
+| Employee name | Annual Salary |
++---------------+---------------+
+| KING          |         60000 |
+| FRED          |         60000 |
+| HOFFMAN       |         49800 |
+| AARAV         |         40200 |
+| SCOTT         |         36000 |
+| FORD          |         36000 |
+| JONES         |         35700 |
+| BLAKE         |         34200 |
+| GRASS         |         30900 |
+| CLARK         |         29400 |
++---------------+---------------+
+10 rows in set (0.00 sec)
+
+==============================================================================================================================================================================================================================================================
+
+Q.10:-Display the names of Employees whose names contain the character “F”.
+
+Query:- select ename as 'Employee Name' from emp where ename like '%F%';
+
+Output:-
+
++---------------+
+| Employee Name |
++---------------+
+| FRED          |
+| FORD          |
+| HOFFMAN       |
++---------------+
+3 rows in set (0.00 sec)
+
+================================================================================================================================================================================================================================================================
+
+Q.11:-Display the Names and Numbers of all Departments in the descending order of the Department Names.
+
+Query:-select dname 'Department Name',deptno 'Department Numbers' from dept order by dname desc;
+
+Output:-
+
++-----------------+--------------------+
+| Department Name | Department Numbers |
++-----------------+--------------------+
+| SALES           |                 30 |
+| RESEARCH        |                 20 |
+| OPERATIONS      |                 40 |
+| IT              |                 60 |
+| HR              |                 50 |
+| ACCOUNTING      |                 10 |
++-----------------+--------------------+
+6 rows in set (0.00 sec)
+
+
+==================================================================================================================================================================================================================================================================
+
+Q.12:-Display the Name, Employee Number, Designation and Salary of those Employees who earn a monthly salary
+of not less than 1000 and not more than 2000.
+
+Query:- select ename as 'Employee Name',Job as 'Designation', sal from emp where sal>1000 and sal<2000;
+
+Output:-
+
++---------------+---------------------+------+
+| Employee Name | Designation         | sal  |
++---------------+---------------------+------+
+| GITA          | Compliance officers | 1750 |
+| VRUSHALI      | Compliance officers | 1750 |
+| SHARMIN       | Public Relation     | 1750 |
+| BANDISH       | Public Relation     | 1750 |
+| THOMAS        | CLERK               | 1750 |
+| ALLEN         | SALESMAN            | 1600 |
+| WARD          | SALESMAN            | 1250 |
+| MARTIN        | SALESMAN            | 1250 |
+| TURNER        | SALESMAN            | 1500 |
+| ADAMS         | CLERK               | 1100 |
+| MILLER        | CLERK               | 1300 |
+| AARUSH        | SALESMAN            | 1350 |
+| ALEX          | MANAGER             | 1250 |
+| NATASHA       | CLERK               | 1750 |
+| SANGITA       | Compliance officers | 1750 |
+| SUPRIYA       | ANALYST             | 1750 |
++---------------+---------------------+------+
+16 rows in set (0.00 sec)
+
+================================================================================================================================================================================================================================================================
+
+Q.13:-Find out the Bonus (Bonus 1.1% of Annual Salary) that every person will receive at the end of the year.
+
+Query:-  select ename,(sal*12)*0.011 as bonus from emp;
+
+Output:-
+
++----------+---------+
+| ename    | bonus   |
++----------+---------+
+| GITA     | 231.000 |
+| VRUSHALI | 231.000 |
+| SHARMIN  | 231.000 |
+| BANDISH  | 231.000 |
+| SMITH    | 105.600 |
+| AARAV    | 442.200 |
+| THOMAS   | 231.000 |
+| ALLEN    | 211.200 |
+| WARD     | 165.000 |
+| JONES    | 392.700 |
+| MARTIN   | 165.000 |
+| BLAKE    | 376.200 |
+| CLARK    | 323.400 |
+| SCOTT    | 396.000 |
+| KING     | 660.000 |
+| FRED     | 660.000 |
+| TURNER   | 198.000 |
+| ADAMS    | 145.200 |
+| Ruhan    | 264.000 |
+| Neel     | 132.000 |
+| JAMES    | 125.400 |
+| FORD     | 396.000 |
+| HOFFMAN  | 547.800 |
+| GRASS    | 339.900 |
+| MILLER   | 171.600 |
+| AARUSH   | 178.200 |
+| ALEX     | 165.000 |
+| NATASHA  | 231.000 |
+| SANGITA  | 231.000 |
+| SUPRIYA  | 231.000 |
++----------+---------+
+30 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================================================
+
+Q.14.1:-Display the Name, Job and Dept No. of all the Employees who either work in Department 30 or in Department
+40.
+
+1.Query:-select ename as 'Employee Name' ,Job as 'Job',deptno as 'Department No.' from emp where deptno in (30,40);
+
+1.Output:-
++---------------+---------------------+----------------+
+| Employee Name | Job                 | Department No. |
++---------------+---------------------+----------------+
+| GITA          | Compliance officers |             30 |
+| ALLEN         | SALESMAN            |             30 |
+| WARD          | SALESMAN            |             30 |
+| MARTIN        | SALESMAN            |             30 |
+| BLAKE         | MANAGER             |             30 |
+| TURNER        | SALESMAN            |             30 |
+| JAMES         | CLERK               |             30 |
+| HOFFMAN       | MANAGER             |             30 |
+| GRASS         | SALESMAN            |             30 |
+| AARUSH        | SALESMAN            |             30 |
+| ALEX          | MANAGER             |             30 |
+| NATASHA       | CLERK               |             30 |
++---------------+---------------------+----------------+
+12 rows in set (0.00 sec)
+
+Q.14.2:-Display the Name, Job and Dept No. of all the Employees who either work in Department 30 or in Department
+50.
+
+2.Query:-select ename as 'Employee Name' ,Job as 'Job',deptno as 'Department No.' from emp where deptno in (30,50);
+
+2.Output:-
+
++---------------+---------------------+----------------+
+| Employee Name | Job                 | Department No. |
++---------------+---------------------+----------------+
+| GITA          | Compliance officers |             30 |
+| VRUSHALI      | Compliance officers |             50 |
+| ALLEN         | SALESMAN            |             30 |
+| WARD          | SALESMAN            |             30 |
+| MARTIN        | SALESMAN            |             30 |
+| BLAKE         | MANAGER             |             30 |
+| TURNER        | SALESMAN            |             30 |
+| JAMES         | CLERK               |             30 |
+| HOFFMAN       | MANAGER             |             30 |
+| GRASS         | SALESMAN            |             30 |
+| AARUSH        | SALESMAN            |             30 |
+| ALEX          | MANAGER             |             30 |
+| NATASHA       | CLERK               |             30 |
+| SANGITA       | Compliance officers |             50 |
+| SUPRIYA       | ANALYST             |             50 |
++---------------+---------------------+----------------+
+15 rows in set (0.00 sec)
+
+===============================================================================================================================================================================================================================
+
+Q.15:-Display the Employee Number, Name for Clerks and Managers who’s Salary is more than 1500.
+
+Query:- select empno 'Employee No.',ename 'Employee Name' from emp where job in ('CLERK','Manager') or sal=1500;
+
+Output:-
+
++--------------+---------------+
+| Employee No. | Employee Name |
++--------------+---------------+
+|         7369 | SMITH         |
+|         7415 | AARAV         |
+|         7421 | THOMAS        |
+|         7566 | JONES         |
+|         7698 | BLAKE         |
+|         7782 | CLARK         |
+|         7844 | TURNER        |
+|         7876 | ADAMS         |
+|         7900 | JAMES         |
+|         7919 | HOFFMAN       |
+|         7934 | MILLER        |
+|         7949 | ALEX          |
+|         8433 | NATASHA       |
++--------------+---------------+
+13 rows in set (0.00 sec)
+
