@@ -102,7 +102,15 @@ public class MyArray {
 	
 	public int deleteByValue(int value)
 	{
-		return false;
+		int pos=searchByValue(value);
+		if(pos!=-1)
+		{
+			boolean flag=deleteByPosition(pos);
+			if(flag)
+			{
+				
+			}
+		}
 		
 	}
 
