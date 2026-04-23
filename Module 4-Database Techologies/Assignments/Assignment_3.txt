@@ -620,3 +620,19 @@ Q.25:-Find out details of Employees where Commission is greater than 5% of the S
 Query:-
 
 Output:-
+
+=======================================================================================================================================================================================================================================
+
+Q.30:-Display the name of all Employees that have one ‘LS’ in the name and are in department 10 or their manager
+is 7782.
+
+Query:-  select ename as 'Employee name' from emp where ename like '%L%R%' and deptno=10;
+
+Output:-
++---------------+
+| Employee name |
++---------------+
+| CLARK         |
+| MILLER        |
++---------------+
+2 rows in set (0.00 sec)
