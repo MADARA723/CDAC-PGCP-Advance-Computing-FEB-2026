@@ -108,11 +108,92 @@ public class MyArray {
 			boolean flag=deleteByPosition(pos);
 			if(flag)
 			{
+				return pos;
 				
 			}
 		}
+		return -1;
 		
 	}
+	
+	//flag=true then rotate rigth--->num of times
+	//flag=false then rotate left -->num of times
+	
+	public void rotateArray(boolean flag,int num)
+	{
+		if(flag) {
+			//right rotation
+			for(int j=0;j<num;j++)
+			{
+				int temp=arr[count-1];
+				for(int i=count-1;i>0;i--)
+				{
+					arr[i]=arr[i-1];
+				}
+				arr[0]=temp;
+			}
 
+		}else
+		{
+			//left rotation
+			for(int j=0;j<num;j++);
+			{
+				int temp=arr[0];
+				for(int i=0;i<count-1;i++)
+				{
+					arr[i]=arr[i+1];
+				}
+				arr[count-1]=temp;
+			}
+		}
+	}
+	//if flag is true the reverse the array in place
+	//else reverse the copy of the array
+	public int[]reverseArray(boolean flag){
+	if(flag)
+	{
+		for(int i=0,j=count-1;i<j;i++,j--)
+		{
+			int temp=arr[i];
+			arr[i]=arr[j];
+			arr[j]=temp;
+		}
+		return arr;
+	}
+	else {
+		int[] arr1=new int[count];
+		for(int i=count-1,j=0;i>=0;i--,j++)
+		{
+			arr1[j]=arr[i];
+			
+		}
+		return arr1;
+	 }
+	}	
+	public int findMax()
+	{
+		int max=arr[0];
+		for(int i=1;i<count;i++)
+		{
+			if(arr[i]>max)
+			{
+				max=arr[i];
+			}
+		}
+		return max;
+	}
+//assumption---------------array contains all +ve value
+	
+	public int[] exchangeIndexValue()
+	{
+		//find maximum number
+		int maxnum=findMax();
+		//create a new array of size max+1
+		int[] arr1=new int[maxnum+1];
+		for(int i=0;i<arr1.length;i++)
+		{
+			arr1[i]=-1;
+		}
+	}
 	
 }
