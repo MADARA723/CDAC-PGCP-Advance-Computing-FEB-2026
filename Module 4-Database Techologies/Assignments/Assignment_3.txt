@@ -735,6 +735,128 @@ Output:-
 
 Q.31:-Display Name, Job & Sal for all Emp whose job is Clerk or Analyst and their Sal is not equal to 1000, 3000 &  5000. 
 
-Query:-
+Query:-select ename as "Name",Job,SAL from emp where job in ('CLERK','ANALYST') and sal not in (1000,2000,3000);
 
 Output:-
++---------+---------+------+
+| Name    | Job     | SAL  |
++---------+---------+------+
+| SMITH   | CLERK   |  800 |
+| AARAV   | CLERK   | 3350 |
+| THOMAS  | CLERK   | 1750 |
+| ADAMS   | CLERK   | 1100 |
+| JAMES   | CLERK   |  950 |
+| MILLER  | CLERK   | 1300 |
+| NATASHA | CLERK   | 1750 |
+| SUPRIYA | ANALYST | 1750 |
++---------+---------+------+
+8 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+Q.32:-Display the Name, Sal & Comm for all Employees whose Comm amount is greater than their Sal increased by  10%.
+
+Query:-select ename as "Name",SAL,comm from emp where comm>sal+(sal*0.1);
+
+Output:-
+
++--------+------+------+
+| Name   | SAL  | comm |
++--------+------+------+
+| MARTIN | 1250 | 1400 |
+| AARUSH | 1350 | 2700 |
++--------+------+------+
+2 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+Q.33:- Display Employee Number, Name, Gross Salary (Bonus + Salary*12 + Commission) for all those Employees  who belong to Department Number 20 or 30 in the ascending order of Employee Numbers. 
+
+Query:- select empno as "Employee Number", ename as "Employee Name" ,(BonusID + (Sal*12) + (case when Comm is not null  then 0 else comm end)) 'Gross Salary' from emp where deptno in (20,30) order by empno asc;
+
+
+Output:-
++-----------------+---------------+--------------+
+| Employee Number | Employee Name | Gross Salary |
++-----------------+---------------+--------------+
+|            6001 | GITA          |         NULL |
+|            6473 | SHARMIN       |         NULL |
+|            6781 | BANDISH       |         NULL |
+|            7369 | SMITH         |         NULL |
+|            7499 | ALLEN         |        19204 |
+|            7521 | WARD          |        15001 |
+|            7566 | JONES         |         NULL |
+|            7654 | MARTIN        |        15006 |
+|            7698 | BLAKE         |         NULL |
+|            7788 | SCOTT         |         NULL |
+|            7840 | FRED          |         NULL |
+|            7844 | TURNER        |        18005 |
+|            7876 | ADAMS         |         NULL |
+|            7900 | JAMES         |         NULL |
+|            7902 | FORD          |         NULL |
+|            7919 | HOFFMAN       |         NULL |
+|            7920 | GRASS         |        30905 |
+|            7945 | AARUSH        |         NULL |
+|            7949 | ALEX          |        15005 |
+|            8433 | NATASHA       |         NULL |
++-----------------+---------------+--------------+
+20 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+
+Q.34:- Display the Employee Number, Name, Salary, and Salary Increase by 15% expressed as a whole number.  Label the column New Salary. 
+
+Query:-  select  empno as "Employee Number",ename as "Employee Name", (floor(sal*0.15)) "New Salary" from emp;
+
+Output:-
+
++-----------------+---------------+------------+
+| Employee Number | Employee Name | New Salary |
++-----------------+---------------+------------+
+|            6001 | GITA          |        262 |
+|            6129 | VRUSHALI      |        262 |
+|            6473 | SHARMIN       |        262 |
+|            6781 | BANDISH       |        262 |
+|            7369 | SMITH         |        120 |
+|            7415 | AARAV         |        502 |
+|            7421 | THOMAS        |        262 |
+|            7499 | ALLEN         |        240 |
+|            7521 | WARD          |        187 |
+|            7566 | JONES         |        446 |
+|            7654 | MARTIN        |        187 |
+|            7698 | BLAKE         |        427 |
+|            7782 | CLARK         |        367 |
+|            7788 | SCOTT         |        450 |
+|            7839 | KING          |        750 |
+|            7840 | FRED          |        750 |
+|            7844 | TURNER        |        225 |
+|            7876 | ADAMS         |        165 |
+|            7888 | Ruhan         |        300 |
+|            7889 | Neel          |        150 |
+|            7900 | JAMES         |        142 |
+|            7902 | FORD          |        450 |
+|            7919 | HOFFMAN       |        622 |
+|            7920 | GRASS         |        386 |
+|            7934 | MILLER        |        195 |
+|            7945 | AARUSH        |        202 |
+|            7949 | ALEX          |        187 |
+|            8433 | NATASHA       |        262 |
+|            9400 | SANGITA       |        262 |
+|            9473 | SUPRIYA       |        262 |
++-----------------+---------------+------------+
+30 rows in set (0.00 sec)
+
+=======================================================================================================================================================================================================================================
+
+Q.35:-Write a query that will display the employees name with the first letter capitalized an other letters  lowercase and the length of their name, for all employees whose name starts with J, A or M. 
+
+Query:- select concat(upper(substring,count(ename) from emp;
+
+Output:-
+
+
+=======================================================================================================================================================================================================================================
+
+39. Create a query that will display the Employees name and commission amount. If the employee does not  earn commission, put “No Commission”. 
+
