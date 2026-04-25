@@ -851,12 +851,124 @@ Output:-
 
 Q.35:-Write a query that will display the employees name with the first letter capitalized an other letters  lowercase and the length of their name, for all employees whose name starts with J, A or M. 
 
-Query:- select concat(upper(substring,count(ename) from emp;
+Query:- select concat(ucase(substr(ename,1,1)),lcase(substr(ename,2))) as formmatted_name,length(ename) as name_length from emp where ename like 'J%' or ename like 'A%' or ename like '%M';
 
 Output:-
+
++-----------------+-------------+
+| formmatted_name | name_length |
++-----------------+-------------+
+| Aarav           |           5 |
+| Allen           |           5 |
+| Jones           |           5 |
+| Adams           |           5 |
+| James           |           5 |
+| Aarush          |           6 |
+| Alex            |           4 |
++-----------------+-------------+
+7 rows in set (0.01 sec)
 
 
 =======================================================================================================================================================================================================================================
 
-39. Create a query that will display the Employees name and commission amount. If the employee does not  earn commission, put “No Commission”. 
+36. Create a query that will display the Employees name and commission amount. If the employee does not  earn commission, put “No Commission”. 
 
+Query:- SELECT ename, CASE WHEN comm > 0 THEN comm ELSE 'No Commission' END as 'Commission Amount' FROM emp;
+
+Output:-
+
++----------+-------------------+
+| ename    | Commission Amount |
++----------+-------------------+
+| GITA     | No Commission     |
+| VRUSHALI | No Commission     |
+| SHARMIN  | No Commission     |
+| BANDISH  | No Commission     |
+| SMITH    | No Commission     |
+| AARAV    | No Commission     |
+| THOMAS   | No Commission     |
+| ALLEN    | 300               |
+| WARD     | 500               |
+| JONES    | No Commission     |
+| MARTIN   | 1400              |
+| BLAKE    | No Commission     |
+| CLARK    | No Commission     |
+| SCOTT    | No Commission     |
+| KING     | No Commission     |
+| FRED     | No Commission     |
+| TURNER   | No Commission     |
+| ADAMS    | No Commission     |
+| Ruhan    | No Commission     |
+| Neel     | No Commission     |
+| JAMES    | No Commission     |
+| FORD     | No Commission     |
+| HOFFMAN  | No Commission     |
+| GRASS    | 2700              |
+| MILLER   | 1300              |
+| AARUSH   | 2700              |
+| ALEX     | 500               |
+| NATASHA  | No Commission     |
+| SANGITA  | No Commission     |
+| SUPRIYA  | No Commission     |
++----------+-------------------+
+
+=========================================================================================================================================================================================================================================
+
+Q.37:-Display Customers Name, Sales Amount approximate Profit Earned (Profit = 8% of Sales Amount) in  whole numbers. 
+
+Query:-select custname as 'Customer Name',Amount as 'Sales Amount',(amount*0.08) Profit from sales ;
+
+Output:-
+
++----------------+--------------+---------+
+| Customer Name  | Sales Amount | Profit  |
++----------------+--------------+---------+
+| JOCKSPORTS     |      1703.40 |  136.27 |
+| JOCKSPORTS     |       485.00 |   38.80 |
+| JOCKSPORTS     |       292.50 |   23.40 |
+| JOCKSPORTS     |        50.00 |    4.00 |
+| JOCKSPORTS     |       350.00 |   28.00 |
+| JOCKSPORTS     |      2400.00 |  192.00 |
+| TKB SPORT SHOP |        35.00 |    2.80 |
+| TKB SPORT SHOP |         8.40 |    0.67 |
+| TKB SPORT SHOP |        58.00 |    4.64 |
+| VOLLYRITE      |      3306.00 |  264.48 |
+| VOLLYRITE      |     16569.00 | 1325.52 |
+| VOLLYRITE      |      2300.50 |  184.04 |
+| VOLLYRITE      |      5600.00 |  448.00 |
+| JUST TENNIS    |       450.00 |   36.00 |
+| JUST TENNIS    |       140.00 |   11.20 |
+| JUST TENNIS    |       116.00 |    9.28 |
+| JUST TENNIS    |        34.00 |    2.72 |
+| JUST TENNIS    |        24.00 |    1.92 |
+| EVERY MOUNTAIN |       846.80 |   67.74 |
+| EVERY MOUNTAIN |        24.00 |    1.92 |
+| EVERY MOUNTAIN |      3000.00 |  240.00 |
+| EVERY MOUNTAIN |       810.00 |   64.80 |
+| EVERY MOUNTAIN |      1500.00 |  120.00 |
+| EVERY MOUNTAIN |       400.00 |   32.00 |
+| EVERY MOUNTAIN |       240.00 |   19.20 |
+| EVERY MOUNTAIN |       340.00 |   27.20 |
+| K + T SPORTS   |      1750.00 |  140.00 |
+| K + T SPORTS   |      4500.00 |  360.00 |
+| K + T SPORTS   |      1400.00 |  112.00 |
+| K + T SPORTS   |      2800.00 |  224.00 |
+| K + T SPORTS   |     29000.00 | 2320.00 |
+| K + T SPORTS   |      2400.00 |  192.00 |
+| K + T SPORTS   |      2500.00 |  200.00 |
+| K + T SPORTS   |       340.00 |   27.20 |
+| K + T SPORTS   |       480.00 |   38.40 |
+| K + T SPORTS   |      1200.00 |   96.00 |
+| SHAPE UP       |         2.40 |    0.19 |
+| SHAPE UP       |       174.00 |   13.92 |
+| SHAPE UP       |        84.00 |    6.72 |
+| SHAPE UP       |       440.00 |   35.20 |
+| WOMENS SPORTS  |       180.00 |   14.40 |
+| WOMENS SPORTS  |       280.00 |   22.40 |
+| WOMENS SPORTS  |       250.00 |   20.00 |
+| NORTH WOODS    |       560.00 |   44.80 |
+| NORTH WOODS    |      4800.00 |  384.00 |
+| NORTH WOODS    |       600.00 |   48.00 |
+| NORTH WOODS    |       440.00 |   35.20 |
++----------------+--------------+---------+
+47 rows in set (0.00 sec)
