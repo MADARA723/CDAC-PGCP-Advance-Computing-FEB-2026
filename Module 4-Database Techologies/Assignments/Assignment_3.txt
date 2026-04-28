@@ -972,3 +972,111 @@ Output:-
 | NORTH WOODS    |       440.00 |   35.20 |
 +----------------+--------------+---------+
 47 rows in set (0.00 sec)
+
+=========================================================================================================================================================================================================================================
+
+Q.38.:-41. Using the sales table, you need to report the following
+a.Sales for the first quarter of the year of 1999
+b.Sales for the product SP TENNIS RACKET
+
+(Not date column to extract data from)
+
+Query:-
+
+Output:-
+
+=========================================================================================================================================================================================================================================
+
+Q.39:-Consider the Customer table. The Credit Limit of all the Customers is increased by 25%. Calculate the
+new Credit Limit and display the same along with the Name, Repid and Credit Limit for all the
+Customers. The following should be implemented in the query result set:
+a. The Credit Limit should be expressed as a whole number, prefixed with a $ symbol.
+b. Total length of the new Credit Limit should be 10.
+c. Names of the Customers should be displayed in the title case.
+
+Query:- select ucase(substr(name,1,1)) || lcase(substr(name,2)) as "Name",Repid,CreditLimt as "Credit Limit",LPAD('$'||Round(CreditLimit*1.25),10,' ') as "New Credit Limit" from Customer;
+
+Output:-
+
++------+-------+--------------+------------------+
+| Name | Repid | Credit Limit | New Credit Limit |
++------+-------+--------------+------------------+
+|    0 |  7844 |      5000.00 |          1       |
+|    0 |  7521 |     10000.00 |          1       |
+|    0 |  7654 |      7000.00 |          1       |
+|    0 |  7521 |      3000.00 |          1       |
+|    0 |  7499 |     10000.00 |          1       |
+|    0 |  7844 |      5000.00 |          1       |
+|    0 |  7521 |      6000.00 |          1       |
+|    0 |  7499 |     10000.00 |          1       |
+|    0 |  7844 |      8000.00 |          1       |
+|    0 |  2002 |      8000.00 |          1       |
+|    0 |  2342 |     25000.00 |          1       |
+|    0 |  7870 |      8000.00 |          1       |
+|    0 |  7869 |      8000.00 |          1       |
++------+-------+--------------+------------------+
+13 rows in set, 29 warnings (0.00 sec)
+
+=========================================================================================================================================================================================================================================
+
+Q.40:-Display the name and the department number of all employees. The department number should be
+displayed in the following manner:
+a. If the department number is 10, display ‘Belongs to Dept. 10’
+b. If 20, display ‘Belongs to the Dept. 20’
+c. Otherwise display ‘Neither 10 nor 20.’
+
+Query:- select ename as Name, (case when deptno=10 then 'Belongs to Dept. 10' when deptno=20 then 'Belongs to dept. 20' else 'Neither 10 nor 20' end) as 'Department Number' from emp ;
+
+Output:- 
+
++----------+---------------------+
+| Name     | Department Number   |
++----------+---------------------+
+| GITA     | Neither 10 nor 20   |
+| VRUSHALI | Neither 10 nor 20   |
+| SHARMIN  | Belongs to dept. 20 |
+| BANDISH  | Belongs to dept. 20 |
+| SMITH    | Belongs to dept. 20 |
+| AARAV    | Belongs to Dept. 10 |
+| THOMAS   | Belongs to Dept. 10 |
+| ALLEN    | Neither 10 nor 20   |
+| WARD     | Neither 10 nor 20   |
+| JONES    | Belongs to dept. 20 |
+| MARTIN   | Neither 10 nor 20   |
+| BLAKE    | Neither 10 nor 20   |
+| CLARK    | Belongs to Dept. 10 |
+| SCOTT    | Belongs to dept. 20 |
+| KING     | Belongs to Dept. 10 |
+| FRED     | Belongs to dept. 20 |
+| TURNER   | Neither 10 nor 20   |
+| ADAMS    | Belongs to dept. 20 |
+| Ruhan    | Neither 10 nor 20   |
+| Neel     | Neither 10 nor 20   |
+| JAMES    | Neither 10 nor 20   |
+| FORD     | Belongs to dept. 20 |
+| HOFFMAN  | Neither 10 nor 20   |
+| GRASS    | Neither 10 nor 20   |
+| MILLER   | Belongs to Dept. 10 |
+| AARUSH   | Neither 10 nor 20   |
+| ALEX     | Neither 10 nor 20   |
+| NATASHA  | Neither 10 nor 20   |
+| SANGITA  | Neither 10 nor 20   |
+| SUPRIYA  | Neither 10 nor 20   |
++----------+---------------------+
+30 rows in set (0.00 sec)
+
+=========================================================================================================================================================================================================================================
+
+Q.41:-Display the name, first letter of the name (as Abbreviated Name) and the annual compensation for all
+employees. The following issues should be taken care of:
+a. The annual compensation has to be calculated by adding the salary and the commission earned by
+the employee and multiplying the value by 12.
+b. The first letter of the employee name should be in upper case.
+c. If the employee does not earn any commission, the commission values should be taken as 600.
+
+Query:-
+
+Output:-
+
+
+
