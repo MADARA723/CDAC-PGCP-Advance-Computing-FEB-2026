@@ -1065,7 +1065,7 @@ Output:-
 +----------+---------------------+
 30 rows in set (0.00 sec)
 
-========================================================================================================================================================================================================================================
+=========================================================================================================================================================================================================================================
 
 Q.41:-Display the name, first letter of the name (as Abbreviated Name) and the annual compensation for all
 employees. The following issues should be taken care of:
@@ -1076,7 +1076,46 @@ c. If the employee does not earn any commission, the commission values should be
 
 Query:-
 
+ select ename as "Name",ucase(substr(ename,1,1)) as "Abrivated Name",(sal+COALESCE(comm,600))*12 as 'Annual Compensation' from emp ;
+
 Output:-
+
++----------+----------------+---------------------+
+| Name     | Abrivated Name | Annual Compensation |
++----------+----------------+---------------------+
+| GITA     | G              |               28200 |
+| VRUSHALI | V              |               28200 |
+| SHARMIN  | S              |               28200 |
+| BANDISH  | B              |               28200 |
+| SMITH    | S              |               16800 |
+| AARAV    | A              |               47400 |
+| THOMAS   | T              |               28200 |
+| ALLEN    | A              |               22800 |
+| WARD     | W              |               21000 |
+| JONES    | J              |               42900 |
+| MARTIN   | M              |               31800 |
+| BLAKE    | B              |               41400 |
+| CLARK    | C              |               36600 |
+| SCOTT    | S              |               43200 |
+| KING     | K              |               67200 |
+| FRED     | F              |               67200 |
+| TURNER   | T              |               18000 |
+| ADAMS    | A              |               20400 |
+| Ruhan    | R              |               31200 |
+| Neel     | N              |               19200 |
+| JAMES    | J              |               18600 |
+| FORD     | F              |               43200 |
+| HOFFMAN  | H              |               57000 |
+| GRASS    | G              |               63300 |
+| MILLER   | M              |               31200 |
+| AARUSH   | A              |               48600 |
+| ALEX     | A              |               21000 |
+| NATASHA  | N              |               28200 |
+| SANGITA  | S              |               28200 |
+| SUPRIYA  | S              |               28200 |
++----------+----------------+---------------------+
+30 rows in set (0.00 sec)
+
 
 
 
