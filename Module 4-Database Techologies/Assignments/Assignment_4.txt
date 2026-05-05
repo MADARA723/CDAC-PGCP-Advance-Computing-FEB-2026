@@ -537,8 +537,43 @@ B. MANAGER
 C. PRESIDENT
 D. OTHER
 
-Query:-select eanme,job
+Query:-select ename,job, case when job="CLERK" then "A" when job="MANAGER" then "B" when job="PRESIDENT" then "C" else "D" end as JOB_CLASSIFICATION from emp;
 
 Output:-
 
++----------+---------------------+--------------------+
+| ename    | job                 | JOB_CLASSIFICATION |
++----------+---------------------+--------------------+
+| GITA     | Compliance officers | D                  |
+| VRUSHALI | Compliance officers | D                  |
+| SHARMIN  | Public Relation     | D                  |
+| BANDISH  | Public Relation     | D                  |
+| SMITH    | CLERK               | A                  |
+| AARAV    | CLERK               | A                  |
+| THOMAS   | CLERK               | A                  |
+| ALLEN    | SALESMAN            | D                  |
+| WARD     | SALESMAN            | D                  |
+| JONES    | MANAGER             | B                  |
+| MARTIN   | SALESMAN            | D                  |
+| BLAKE    | MANAGER             | B                  |
+| CLARK    | MANAGER             | B                  |
+| SCOTT    | ANALYST             | D                  |
+| KING     | PRESIDENT           | C                  |
+| FRED     | vice PRESIDENT      | D                  |
+| TURNER   | SALESMAN            | D                  |
+| ADAMS    | CLERK               | A                  |
+| Ruhan    | Network             | D                  |
+| Neel     | vice PRESIDENT      | D                  |
+| JAMES    | CLERK               | A                  |
+| FORD     | ANALYST             | D                  |
+| HOFFMAN  | MANAGER             | B                  |
+| GRASS    | SALESMAN            | D                  |
+| MILLER   | CLERK               | A                  |
+| AARUSH   | SALESMAN            | D                  |
+| ALEX     | MANAGER             | B                  |
+| NATASHA  | CLERK               | A                  |
+| SANGITA  | Compliance officers | D                  |
+| SUPRIYA  | ANALYST             | D                  |
++----------+---------------------+--------------------+
+30 rows in set (0.00 sec)
 
