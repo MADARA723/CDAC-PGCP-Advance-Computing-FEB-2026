@@ -287,8 +287,98 @@ Output:-
 
 Q.17:- Display the deptno of departments which have more than one CLERK.
 
-Query:-select
+Query:-elect e.job,e.deptno,count(*) from dept d join emp e on d.deptno=e.deptno where e.job="CLERK" group by e.deptno,e.job;
 
 Output:-
 
++-------+--------+----------+
+| job   | deptno | count(*) |
++-------+--------+----------+
+| CLERK |     20 |        2 |
+| CLERK |     10 |        3 |
+| CLERK |     30 |        2 |
++-------+--------+----------+
+3 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.18:-List names and hiredates of employees who were hired in the month of December
+
+Query:-select ename,hiredate from emp where month(hiredate)=12; 
+
+Output:-
+
++-------+------------+
+| ename | hiredate   |
++-------+------------+
+| SMITH | 1980-12-17 |
+| AARAV | 1981-12-31 |
+| SCOTT | 1982-12-09 |
+| JAMES | 1981-12-03 |
+| FORD  | 1981-12-03 |
++-------+------------+
+5 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.19:- List names and hiredate of employees hired in the year 1980
+
+Query:-select ename, hiredate from emp where year(hiredate)=1980 ;
+
+Output:-
++--------+------------+
+| ename  | hiredate   |
++--------+------------+
+| SMITH  | 1980-12-17 |
+| GRASS  | 1980-02-14 |
+| AARUSH | 1980-02-14 |
++--------+------------+
+3 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.20:- Display names and jobs of the people separated by a hyphen. Capitalize the first character
+of name and job.
+
+Query:-select concat (upper(substr(ename,1,1)),lower(substr(ename,2)),'-',upper(substr(job,1,1)),lower(substr(job,2))) as Formatted_info from emp;
+
+Output:-
+
++------------------------------+
+| Formatted_info               |
++------------------------------+
+| Gita-Compliance officers     |
+| Vrushali-Compliance officers |
+| Sharmin-Public relation      |
+| Bandish-Public relation      |
+| Smith-Clerk                  |
+| Aarav-Clerk                  |
+| Thomas-Clerk                 |
+| Allen-Salesman               |
+| Ward-Salesman                |
+| Jones-Manager                |
+| Martin-Salesman              |
+| Blake-Manager                |
+| Clark-Manager                |
+| Scott-Analyst                |
+| King-President               |
+| Fred-Vice president          |
+| Turner-Salesman              |
+| Adams-Clerk                  |
+| Ruhan-Network                |
+| Neel-Vice president          |
+| James-Clerk                  |
+| Ford-Analyst                 |
+| Hoffman-Manager              |
+| Grass-Salesman               |
+| Miller-Clerk                 |
+| Aarush-Salesman              |
+| Alex-Manager                 |
+| Natasha-Clerk                |
+| Sangita-Compliance officers  |
+| Supriya-Analyst              |
++------------------------------+
+30 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
 
