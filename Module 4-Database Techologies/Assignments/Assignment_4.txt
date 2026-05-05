@@ -382,3 +382,163 @@ Output:-
 
 ============================================================================================================================================================================================================================================
 
+Q.21:- List employee numbers, names and hiredates of the people working in the department
+number 20, display the hiredates in the dd/mm/yy format
+
+Query:-select empno,ename,date_format(hiredate,"%d/%m/%Y") as Hiredate from emp where deptno =20;
+
+Output:-
+
++-------+---------+------------+
+| empno | ename   | Hiredate   |
++-------+---------+------------+
+|  6473 | SHARMIN | 19/07/1981 |
+|  6781 | BANDISH | 19/07/1981 |
+|  7369 | SMITH   | 17/12/1980 |
+|  7566 | JONES   | 02/04/1981 |
+|  7788 | SCOTT   | 09/12/1982 |
+|  7840 | FRED    | 09/08/1983 |
+|  7876 | ADAMS   | 12/01/1983 |
+|  7902 | FORD    | 03/12/1981 |
++-------+---------+------------+
+8 rows in set (0.00 sec)
+============================================================================================================================================================================================================================================
+
+Q.22:-Find number of months the president has worked for the company. 
+
+Query:-
+
+Output:-
+
+============================================================================================================================================================================================================================================
+
+Q.23:-Find the day of the week on which SMITH joined.
+
+Query:-select date_format(Hiredate,"%W") as Day_of_Week from emp where ename="SMITH";
+
+Output:-
+
++-------------+
+| Day_of_Week |
++-------------+
+| Wednesday   |
++-------------+
+1 row in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.24:- Find the time of the day in which ADAMS joined.
+
+Query:-
+
+Output:-
+
+(Required Data not present)
+
+============================================================================================================================================================================================================================================
+
+Q.25:- Find day of month on which KING joined.
+
+Query:-select ename,date_format(hiredate,"%W") as Day_of_Week from emp where ename="King";
+
+Output:-
+
++-------+-------------+
+| ename | Day_of_Week |
++-------+-------------+
+| KING  | Tuesday     |
++-------+-------------+
+1 row in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.26:-Find out month on which MARTIN joined.
+
+Query:-select ename,date_format(hiredate,"%W") as Day_of_Week from emp where ename="MARTIN";
+
+Output:-
+
++--------+-------------+
+| ename  | Day_of_Week |
++--------+-------------+
+| MARTIN | Monday      |
++--------+-------------+
+1 row in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.27:-Find out which quarter of the year the employees joined. Display their number and names
+as well
+
+Query:-select empno as "Employee Number",ename as Name,quarter(hiredate) as Quarter from emp;
+
+Output:-
+
++-----------------+----------+---------+
+| Employee Number | Name     | Quarter |
++-----------------+----------+---------+
+|            6001 | GITA     |       3 |
+|            6129 | VRUSHALI |       3 |
+|            6473 | SHARMIN  |       3 |
+|            6781 | BANDISH  |       3 |
+|            7369 | SMITH    |       4 |
+|            7415 | AARAV    |       4 |
+|            7421 | THOMAS   |       3 |
+|            7499 | ALLEN    |       1 |
+|            7521 | WARD     |       1 |
+|            7566 | JONES    |       2 |
+|            7654 | MARTIN   |       3 |
+|            7698 | BLAKE    |       2 |
+|            7782 | CLARK    |       2 |
+|            7788 | SCOTT    |       4 |
+|            7839 | KING     |       4 |
+|            7840 | FRED     |       3 |
+|            7844 | TURNER   |       3 |
+|            7876 | ADAMS    |       1 |
+|            7888 | Ruhan    |       3 |
+|            7889 | Neel     |       3 |
+|            7900 | JAMES    |       4 |
+|            7902 | FORD     |       4 |
+|            7919 | HOFFMAN  |       1 |
+|            7920 | GRASS    |       1 |
+|            7934 | MILLER   |       1 |
+|            7945 | AARUSH   |       1 |
+|            7949 | ALEX     |       1 |
+|            8433 | NATASHA  |       3 |
+|            9400 | SANGITA  |       3 |
+|            9473 | SUPRIYA  |       3 |
++-----------------+----------+---------+
+30 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.28:- Retrieve ANALYST records with the hiredate formatted as – ‘The 3rd of December 1984’
+
+Query:-select date_format(hiredate,"The %D of %M %Y") as formatted_date from emp where job ="ANALYST";
+
+Output:-
+
++--------------------------+
+| formatted_date           |
++--------------------------+
+| The 9th of December 1982 |
+| The 3rd of December 1981 |
+| The 19th of July 1981    |
++--------------------------+
+3 rows in set (0.00 sec)
+
+============================================================================================================================================================================================================================================
+
+Q.29:-List all names, jobs, and a job classification number, which is to be assigned by you.
+Translate the value started in each job field to a job classification number. This is to be
+done as follows
+A. CLERK
+B. MANAGER
+C. PRESIDENT
+D. OTHER
+
+Query:-select eanme,job
+
+Output:-
+
+
