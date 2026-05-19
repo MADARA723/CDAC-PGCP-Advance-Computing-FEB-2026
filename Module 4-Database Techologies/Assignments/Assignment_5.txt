@@ -1,0 +1,86 @@
+-------------------------------------------SELECT Command With Join Command----------------------------------
+
+
+1. Display Name of the salesperson, customer name and amount of sales.
+
+
+Query:-
+
+====================================================================================================================================================================================
+
+2. List employee name and name of managers.
+
+Query:-select e.ename as Employee_Name,m.ename as Manager_Names from emp e left join emp m on e.mgr=m.empno where m.job="MANAGER";
+
+Output:-
+
++---------------+---------------+
+| Employee_Name | Manager_Names |
++---------------+---------------+
+| SCOTT         | JONES         |
+| FORD          | JONES         |
+| HOFFMAN       | JONES         |
+| ALLEN         | BLAKE         |
+| WARD          | BLAKE         |
+| MARTIN        | BLAKE         |
+| TURNER        | BLAKE         |
+| JAMES         | BLAKE         |
+| ALEX          | BLAKE         |
+| MILLER        | CLARK         |
+| GRASS         | HOFFMAN       |
++---------------+---------------+
+11 rows in set (0.00 sec)
+
+====================================================================================================================================================================================
+
+3. Display details of all departments and the corresponding employees
+
+Query:-select d.*,e.ename as Employee_Name from dept d left join emp e on d.deptno=e.deptno;
+
+Output:-
+
++--------+------------+----------+------------+------------+---------------+
+| DEPTNO | DNAME      | LOC      | PWD        | STARTEDON  | Employee_Name |
++--------+------------+----------+------------+------------+---------------+
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 | AARAV         |
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 | THOMAS        |
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 | CLARK         |
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 | KING          |
+|     10 | ACCOUNTING | NEW YORK | r50mpm     | 24/03/1989 | MILLER        |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | SHARMIN       |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | BANDISH       |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | SMITH         |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | JONES         |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | SCOTT         |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | FRED          |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | ADAMS         |
+|     20 | RESEARCH   | DALLAS   | a12recmpm  | 12/04/1989 | FORD          |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | GITA          |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | ALLEN         |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | WARD          |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | MARTIN        |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | BLAKE         |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | TURNER        |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | JAMES         |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | HOFFMAN       |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | GRASS         |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | AARUSH        |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | ALEX          |
+|     30 | SALES      | CHICAGO  | sales@2017 | 13/04/1989 | NATASHA       |
+|     40 | OPERATIONS | BOSTON   | opr@123    | 12/07/1989 | NULL          |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 | VRUSHALI      |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 | SANGITA       |
+|     50 | HR         | PUNE     | PUN@8877   | 22/12/1989 | SUPRIYA       |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 | Ruhan         |
+|     60 | IT         | BARODA   | BRD@1122   | 02/10/1989 | Neel          |
++--------+------------+----------+------------+------------+---------------+
+31 rows in set (0.00 sec)
+
+=========================================================================================================================================================================================
+
+4. Display all customer names with their order details (order number and ship date)
+for the orders shipped in 1987.
+
+Query:-
+
+Output:-
