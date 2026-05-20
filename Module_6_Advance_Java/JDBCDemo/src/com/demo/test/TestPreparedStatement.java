@@ -31,10 +31,10 @@ public class TestPreparedStatement {
 		    }
 		    
 		    //to insert data
-		    int id=23;
-		    String name="yyy";
-		    int qty=44;
-		    double price=4567.89;
+		    int id=43;
+		    String name="yyyuu";
+		    int qty=47;
+		    double price=4568.89;
 		    LocalDate ldt=LocalDate.now();
 		    PreparedStatement pst1=conn.prepareStatement("insert into product1 values(?,?,?,?,?)");
 		    pst1.setInt(1, id);
@@ -42,7 +42,7 @@ public class TestPreparedStatement {
 		    pst1.setInt(3, qty);
 		    pst1.setDouble(4, price);
 		  //java.sql.Date dt=LocalDate.
-		    pst1.setDate(5, null);
+		    pst1.setDate(5, java.sql.Date.valueOf(ldt));
 		    int n= pst1.executeUpdate();
 		    if(n>0) {
 		    	System.out.println("insertion done");
