@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 6-Advance Java\HiberNate\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1752522007.index
+2311563502.index
+2526987298.index
+1352578482.index
+1963645290.index
+2884391529.index
