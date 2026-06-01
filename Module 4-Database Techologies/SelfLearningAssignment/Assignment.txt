@@ -1,0 +1,462 @@
+1. Performing basic CREATE, ALTER, DROP Commands.
+
+
+Create Query:- 
+create table demo1 (
+    -> name varchar(20),
+    -> email varchar(20));
+Query OK, 0 rows affected (0.02 sec)
+
+
+Alter Query:-
+alter table demo1 add column mob_Num varchar(10);
+Query OK, 0 rows affected (0.04 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Alter Output:-
+ desc demo1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(20) | YES  |     | NULL    |       |
+| email   | varchar(20) | YES  |     | NULL    |       |
+| mob_Num | varchar(10) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+Drop Table Query:-
+
+ alter table demo1 drop column email;
+Query OK, 0 rows affected (0.03 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+Drop Output:-
+desc demo1;
++---------+-------------+------+-----+---------+-------+
+| Field   | Type        | Null | Key | Default | Extra |
++---------+-------------+------+-----+---------+-------+
+| name    | varchar(20) | YES  |     | NULL    |       |
+| mob_Num | varchar(10) | YES  |     | NULL    |       |
++---------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+===================================================================================================================================================================================
+
+2. Defining Data Types for Columns Creating, Altering, Dropping Constraints Aggregate Functions: SUM(), AVG(), COUNT(), MAX(), MIN(), COUNT(), Group By, Having Clause Using Like, Distinct, Order By, Between...And Comparing Nulls, Using IN/Not-In.
+
+Create-------------- Alter---------------Dropping Contsraint
+ CREATE TABLE Employee(
+    ->     EmpID INT,
+    ->     Name VARCHAR(50),
+    ->     Salary FLOAT,
+    ->     JoiningDate DATE
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc Employee;
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| EmpID       | int         | YES  |     | NULL    |       |
+| Name        | varchar(50) | YES  |     | NULL    |       |
+| Salary      | float       | YES  |     | NULL    |       |
+| JoiningDate | date        | YES  |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+
+mysql> CREATE TABLE Student(
+    ->     RollNo INT PRIMARY KEY,
+    ->     Name VARCHAR(50) NOT NULL,
+    ->     Age INT CHECK(Age >= 18)
+    -> );
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> desc Student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| RollNo | int         | NO   | PRI | NULL    |       |
+| Name   | varchar(50) | NO   |     | NULL    |       |
+| Age    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+ ALTER TABLE Student
+    -> ADD CONSTRAINT UQ_Name UNIQUE(Name);
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| RollNo | int         | NO   | PRI | NULL    |       |
+| Name   | varchar(50) | NO   | UNI | NULL    |       |
+| Age    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+
+ ALTER TABLE Student
+    -> DROP CONSTRAINT UQ_Name;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> desc Student;
++--------+-------------+------+-----+---------+-------+
+| Field  | Type        | Null | Key | Default | Extra |
++--------+-------------+------+-----+---------+-------+
+| RollNo | int         | NO   | PRI | NULL    |       |
+| Name   | varchar(50) | NO   |     | NULL    |       |
+| Age    | int         | YES  |     | NULL    |       |
++--------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+FUNCIONS:--------SUM(), AVG(), COUNT(), MAX(), MIN(), COUNT(), Group By, Having Clause Using Like, Distinct, Order By, Between...And Comparing Nulls, Using IN/Not-In.
+
+
+mysql> SELECT SUM(Sal)
+    -> FROM Emp;
++----------+
+| SUM(Sal) |
++----------+
+|    63700 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT avg(Sal)
+    -> FROM Emp;
++-----------+
+| avg(Sal)  |
++-----------+
+| 2123.3333 |
++-----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*)  from emp;
++----------+
+| count(*) |
++----------+
+|       30 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select max(sal)  from emp;
++----------+
+| max(sal) |
++----------+
+|     5000 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select min(sal)  from emp;
++----------+
+| min(sal) |
++----------+
+|      800 |
++----------+
+1 row in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+GROUP By CLAUSE:-----------
+
+ select deptno,count(*) from emp group by deptno;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     10 |        5 |
+|     20 |        8 |
+|     30 |       12 |
+|     50 |        3 |
+|     60 |        2 |
++--------+----------+
+5 rows in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+HAVING Clause:-------------
+
+ select deptno,count(*) from emp group by deptno having count(*)>10;
++--------+----------+
+| deptno | count(*) |
++--------+----------+
+|     30 |       12 |
++--------+----------+
+1 row in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+LIKE Operator:------------
+
+ select  * from emp where ename like 'A%';
++-------+--------+--------+----------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+| EMPNO | ENAME  | GENDER | JOB      | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME    | PWD        | PHONE      | isActive |
++-------+--------+--------+----------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+|  7415 | AARAV  | M      | CLERK    | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV        | NULL       | 7032300084 |        0 |
+|  7499 | ALLEN  | M      | SALESMAN | 7698 | 1981-02-20 | 1600 |  300 |     30 |       4 | ALWAYS TESTE | sales@2017 | 7032300096 |        1 |
+|  7876 | ADAMS  | M      | CLERK    | 7788 | 1983-01-12 | 1100 | NULL |     20 |       1 | CRAZY ANYONE | a12recmpm  | 7132300086 |        1 |
+|  7945 | AARUSH | M      | SALESMAN | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH       | ABCDEF     | NULL       |        0 |
+|  7949 | ALEX   | M      | MANAGER  | 7698 | 1982-01-24 | 1250 |  500 |     30 |       5 | QUARTERREST  | sales@2017 | 7156567183 |        1 |
++-------+--------+--------+----------+------+------------+------+------+--------+---------+--------------+------------+------------+----------+
+5 rows in set (0.00 sec)
+
+select * from emp where ename like '%AA%';
++-------+--------+--------+----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+| EMPNO | ENAME  | GENDER | JOB      | MGR  | HIREDATE   | SAL  | COMM | DEPTNO | BONUSID | USER NAME | PWD    | PHONE      | isActive |
++-------+--------+--------+----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+|  7415 | AARAV  | M      | CLERK    | 7902 | 1981-12-31 | 3350 | NULL |     10 |    NULL | AARAV     | NULL   | 7032300084 |        0 |
+|  7945 | AARUSH | M      | SALESMAN | 7902 | 1980-02-14 | 1350 | 2700 |     30 |    NULL | AARUSH    | ABCDEF | NULL       |        0 |
++-------+--------+--------+----------+------+------------+------+------+--------+---------+-----------+--------+------------+----------+
+2 rows in set (0.00 sec)
+
+ select distinct job from emp order by job;
++---------------------+
+| job                 |
++---------------------+
+| ANALYST             |
+| CLERK               |
+| Compliance officers |
+| MANAGER             |
+| Network             |
+| PRESIDENT           |
+| Public Relation     |
+| SALESMAN            |
+| vice PRESIDENT      |
++---------------------+
+9 rows in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+
+BETWEEN .....AND
+
+SELECT ENAME,SAL
+    -> FROM EMP
+    -> WHERE SAL BETWEEN 1000 AND 2000;
++----------+------+
+| ENAME    | SAL  |
++----------+------+
+| GITA     | 1750 |
+| VRUSHALI | 1750 |
+| SHARMIN  | 1750 |
+| BANDISH  | 1750 |
+| THOMAS   | 1750 |
+| ALLEN    | 1600 |
+| WARD     | 1250 |
+| MARTIN   | 1250 |
+| TURNER   | 1500 |
+| ADAMS    | 1100 |
+| Ruhan    | 2000 |
+| Neel     | 1000 |
+| MILLER   | 1300 |
+| AARUSH   | 1350 |
+| ALEX     | 1250 |
+| NATASHA  | 1750 |
+| SANGITA  | 1750 |
+| SUPRIYA  | 1750 |
++----------+------+
+18 rows in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+Comparing NULLs
+
+mysql> SELECT ENAME
+    -> FROM EMP
+    -> WHERE COMM IS NULL;
++----------+
+| ENAME    |
++----------+
+| GITA     |
+| VRUSHALI |
+| SHARMIN  |
+| BANDISH  |
+| SMITH    |
+| AARAV    |
+| THOMAS   |
+| JONES    |
+| BLAKE    |
+| CLARK    |
+| SCOTT    |
+| KING     |
+| FRED     |
+| ADAMS    |
+| Ruhan    |
+| Neel     |
+| JAMES    |
+| FORD     |
+| HOFFMAN  |
+| NATASHA  |
+| SANGITA  |
+| SUPRIYA  |
++----------+
+22 rows in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+IN
+
+mysql> SELECT ENAME,DEPTNO
+    -> FROM EMP
+    -> WHERE DEPTNO IN (10,20,30);
++---------+--------+
+| ENAME   | DEPTNO |
++---------+--------+
+| GITA    |     30 |
+| SHARMIN |     20 |
+| BANDISH |     20 |
+| SMITH   |     20 |
+| AARAV   |     10 |
+| THOMAS  |     10 |
+| ALLEN   |     30 |
+| WARD    |     30 |
+| JONES   |     20 |
+| MARTIN  |     30 |
+| BLAKE   |     30 |
+| CLARK   |     10 |
+| SCOTT   |     20 |
+| KING    |     10 |
+| FRED    |     20 |
+| TURNER  |     30 |
+| ADAMS   |     20 |
+| JAMES   |     30 |
+| FORD    |     20 |
+| HOFFMAN |     30 |
+| GRASS   |     30 |
+| MILLER  |     10 |
+| AARUSH  |     30 |
+| ALEX    |     30 |
+| NATASHA |     30 |
++---------+--------+
+25 rows in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+NOT IN
+
+ SELECT ENAME,JOB
+    -> FROM EMP
+    -> WHERE JOB NOT IN ('MANAGER','CLERK');
++----------+---------------------+
+| ENAME    | JOB                 |
++----------+---------------------+
+| GITA     | Compliance officers |
+| VRUSHALI | Compliance officers |
+| SHARMIN  | Public Relation     |
+| BANDISH  | Public Relation     |
+| ALLEN    | SALESMAN            |
+| WARD     | SALESMAN            |
+| MARTIN   | SALESMAN            |
+| SCOTT    | ANALYST             |
+| KING     | PRESIDENT           |
+| FRED     | vice PRESIDENT      |
+| TURNER   | SALESMAN            |
+| Ruhan    | Network             |
+| Neel     | vice PRESIDENT      |
+| FORD     | ANALYST             |
+| GRASS    | SALESMAN            |
+| AARUSH   | SALESMAN            |
+| SANGITA  | Compliance officers |
+| SUPRIYA  | ANALYST             |
++----------+---------------------+
+18 rows in set (0.00 sec)
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+============================================================================================================================================================================================
+
+
+3. Union/Union ALL Queries on Various type of Joins using OLD and SQL Standard Syntax Copying table structure, Copying data from one table to another Using AUTO_INCREMENT.
+
+
+ SELECT ENAME, DEPTNO
+    -> FROM EMP
+    -> WHERE DEPTNO = 10
+    ->
+    -> UNION
+    ->
+    -> SELECT ENAME, DEPTNO
+    -> FROM EMP
+    -> WHERE DEPTNO = 20;
++---------+--------+
+| ENAME   | DEPTNO |
++---------+--------+
+| AARAV   |     10 |
+| THOMAS  |     10 |
+| CLARK   |     10 |
+| KING    |     10 |
+| MILLER  |     10 |
+| SHARMIN |     20 |
+| BANDISH |     20 |
+| SMITH   |     20 |
+| JONES   |     20 |
+| SCOTT   |     20 |
+| FRED    |     20 |
+| ADAMS   |     20 |
+| FORD    |     20 |
++---------+--------+
+13 rows in set (0.00 sec)
+
+
+=-=-=-=-==-=-==-=-=-=-=-=-=-=-=-===-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-==-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-==-=-
+
+INNER JOIN ------------- 
+
+OLD SYNTAX-------------
+
+
+SELECT E.ENAME, D.DNAME
+FROM EMP E, DEPT D
+WHERE E.DEPTNO = D.DEPTNO;
+
+SQL SYNTAX---------------
+
+
+mysql> SELECT E.ENAME, D.DNAME
+    -> FROM EMP E
+    -> INNER JOIN DEPT D
+    -> ON E.DEPTNO = D.DEPTNO;
++----------+------------+
+| ENAME    | DNAME      |
++----------+------------+
+| AARAV    | ACCOUNTING |
+| THOMAS   | ACCOUNTING |
+| CLARK    | ACCOUNTING |
+| KING     | ACCOUNTING |
+| MILLER   | ACCOUNTING |
+| SHARMIN  | RESEARCH   |
+| BANDISH  | RESEARCH   |
+| SMITH    | RESEARCH   |
+| JONES    | RESEARCH   |
+| SCOTT    | RESEARCH   |
+| FRED     | RESEARCH   |
+| ADAMS    | RESEARCH   |
+| FORD     | RESEARCH   |
+| GITA     | SALES      |
+| ALLEN    | SALES      |
+| WARD     | SALES      |
+| MARTIN   | SALES      |
+| BLAKE    | SALES      |
+| TURNER   | SALES      |
+| JAMES    | SALES      |
+| HOFFMAN  | SALES      |
+| GRASS    | SALES      |
+| AARUSH   | SALES      |
+| ALEX     | SALES      |
+| NATASHA  | SALES      |
+| VRUSHALI | HR         |
+| SANGITA  | HR         |
+| SUPRIYA  | HR         |
+| Ruhan    | IT         |
+| Neel     | IT         |
++----------+------------+
+30 rows in set (0.01 sec)
+
+
+
+
+
+
