@@ -1,0 +1,14 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\bin\Debug\net8.0\19Demo_Events_Delegate.exe
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\bin\Debug\net8.0\19Demo_Events_Delegate.deps.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\bin\Debug\net8.0\19Demo_Events_Delegate.runtimeconfig.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\bin\Debug\net8.0\19Demo_Events_Delegate.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\bin\Debug\net8.0\19Demo_Events_Delegate.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.AssemblyInfoInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.AssemblyInfo.cs
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\refint\19Demo_Events_Delegate.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\19Demo_Events_Delegate.genruntimeconfig.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\19Demo_Events_Delegate\obj\Debug\net8.0\ref\19Demo_Events_Delegate.dll
