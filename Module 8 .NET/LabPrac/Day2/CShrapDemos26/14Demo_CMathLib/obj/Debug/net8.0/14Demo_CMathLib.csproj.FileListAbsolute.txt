@@ -1,0 +1,11 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\bin\Debug\net8.0\14Demo_CMathLib.deps.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\bin\Debug\net8.0\14Demo_CMathLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\bin\Debug\net8.0\14Demo_CMathLib.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\14Demo_CMathLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\14Demo_CMathLib.AssemblyInfoInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\14Demo_CMathLib.AssemblyInfo.cs
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\14Demo_CMathLib.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\14Demo_CMathLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\refint\14Demo_CMathLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\14Demo_CMathLib.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\14Demo_CMathLib\obj\Debug\net8.0\ref\14Demo_CMathLib.dll

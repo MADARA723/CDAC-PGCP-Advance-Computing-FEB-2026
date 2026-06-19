@@ -1,0 +1,15 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\bin\Debug\net8.0\15Demo_OOP.deps.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\bin\Debug\net8.0\15Demo_OOP.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\bin\Debug\net8.0\15Demo_OOP.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\bin\Debug\net8.0\14Demo_CMathLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\bin\Debug\net8.0\14Demo_CMathLib.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.csproj.AssemblyReference.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.AssemblyInfoInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.AssemblyInfo.cs
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.csproj.Up2Date
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\refint\15Demo_OOP.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\15Demo_OOP.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\15Demo\obj\Debug\net8.0\ref\15Demo_OOP.dll
