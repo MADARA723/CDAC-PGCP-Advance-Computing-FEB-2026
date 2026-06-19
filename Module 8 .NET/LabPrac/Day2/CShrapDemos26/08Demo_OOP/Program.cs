@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using System.Xml.Serialization;
 
 namespace _08Demo_OOP
 {
@@ -6,7 +7,21 @@ namespace _08Demo_OOP
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+           while(true)
+            {
+                Console.WriteLine("Enter your Report choice: 1. PDF, 2. DOCX, 3. Excel, 4. JSON, 5. XML");
+                int Choice = Convert.ToInt32(Console.ReadLine());
+
+                ReportFactory fatory = new ReportFactory();
+                Report somereport = fatory.GetSomeReport(Choice);
+                somereport.GenerateReport();
+                Console.WriteLine("Do oyu want to continue?y/n");
+                string ynChoice = Console.ReadLine();
+                if(ynChoice=="n")
+                {
+                    break;
+                }
+            }
         }
     }
     //Abstract class
@@ -26,7 +41,7 @@ namespace _08Demo_OOP
         }
 
     }
-    public abstract class SepcialReport:Report
+    public abstract class SpecialReport:Report
     {
         protected abstract void ReValidate();
         public override void GenerateReport()
@@ -41,20 +56,25 @@ namespace _08Demo_OOP
     }
     public class ReportFactory
     {
-        public Report getSomeReport(int ch)
+        public Report GetSomeReport(int ch)
         {
             Report report = null;
             switch(ch)
             {
                 case 1:
+                    report = new PDF();
                     break;
                 case 2:
+                    report = new DOCX();
                     break;
-                 case 3:
+                case 3:
+                    report = new Excel();
                     break;
-                    case 4:
+                case 4:
+                    report = new JSON();
                     break;
-                    case 5:
+                case 5:
+                    report = new XML();
                     break;
                 default:
                     Console.WriteLine("Invalid Choice");
@@ -92,6 +112,60 @@ namespace _08Demo_OOP
         protected override void Save()
         {
             Console.WriteLine("Saving the DOCX");
+        }
+    }
+    public class Excel : Report
+    {
+        protected override void Parse()
+        {
+            Console.WriteLine("Parsing Excel Report");
+        }
+        protected override void Validate()
+        {
+            Console.WriteLine("Validateing Excel Report");
+        }
+      
+        protected override void Save()
+        {
+            Console.WriteLine("Saving the Excel");
+        }
+    }
+    public class JSON : SpecialReport
+    {
+        protected override void Parse()
+        {
+            Console.WriteLine("Parsing XML Report");
+        }
+        protected override void Validate()
+        {
+            Console.WriteLine("Validateing XML Report");
+        }
+        protected override void ReValidate()
+        {
+            Console.WriteLine("Validateing XML Report");
+        }
+        protected override void Save()
+        {
+            Console.WriteLine("Saving the XML");
+        }
+    }
+    public class XML : SpecialReport
+    {
+        protected override void Parse()
+        {
+            Console.WriteLine("Parsing XML Report");
+        }
+        protected override void Validate()
+        {
+            Console.WriteLine("Validateing XML Report");
+        }
+        protected override void ReValidate()
+        {
+            Console.WriteLine("Validateing XML Report");
+        }
+        protected override void Save()
+        {
+            Console.WriteLine("Saving the XML");
         }
     }
 
