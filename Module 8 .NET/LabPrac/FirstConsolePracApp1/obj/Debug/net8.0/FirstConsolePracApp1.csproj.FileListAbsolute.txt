@@ -1,0 +1,14 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\bin\Debug\net8.0\FirstConsolePracApp1.exe
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\bin\Debug\net8.0\FirstConsolePracApp1.deps.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\bin\Debug\net8.0\FirstConsolePracApp1.runtimeconfig.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\bin\Debug\net8.0\FirstConsolePracApp1.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\bin\Debug\net8.0\FirstConsolePracApp1.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.AssemblyInfoInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.AssemblyInfo.cs
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\refint\FirstConsolePracApp1.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\FirstConsolePracApp1.genruntimeconfig.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\FirstConsolePracApp1\obj\Debug\net8.0\ref\FirstConsolePracApp1.dll

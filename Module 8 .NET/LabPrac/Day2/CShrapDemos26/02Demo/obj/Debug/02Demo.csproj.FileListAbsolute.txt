@@ -1,0 +1,7 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\bin\Debug\02Demo.exe.config
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\bin\Debug\02Demo.exe
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\bin\Debug\02Demo.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\obj\Debug\02Demo.csproj.AssemblyReference.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\obj\Debug\02Demo.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\obj\Debug\02Demo.exe
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\02Demo\obj\Debug\02Demo.pdb

@@ -1,0 +1,10 @@
+il code,cls,jit compiler,gc,clr,manage code,unmanaged code, GC level as well,
+
+how to create console appln
+
+for loop,while, switch case,do while loop,condition statements,
+
+
+studY datatypes in c#
+
+.NET Framework vs c# language
