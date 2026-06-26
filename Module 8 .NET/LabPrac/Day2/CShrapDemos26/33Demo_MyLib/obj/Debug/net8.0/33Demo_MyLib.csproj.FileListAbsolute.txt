@@ -1,0 +1,11 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\bin\Debug\net8.0\33Demo_MyLib.deps.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\bin\Debug\net8.0\33Demo_MyLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\bin\Debug\net8.0\33Demo_MyLib.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\33Demo_MyLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\33Demo_MyLib.AssemblyInfoInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\33Demo_MyLib.AssemblyInfo.cs
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\33Demo_MyLib.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\33Demo_MyLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\refint\33Demo_MyLib.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\33Demo_MyLib.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\33Demo_MyLib\obj\Debug\net8.0\ref\33Demo_MyLib.dll

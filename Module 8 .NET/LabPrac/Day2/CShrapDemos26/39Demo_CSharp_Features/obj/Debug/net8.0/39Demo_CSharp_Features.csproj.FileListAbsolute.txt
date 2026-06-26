@@ -1,0 +1,14 @@
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.GeneratedMSBuildEditorConfig.editorconfig
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.AssemblyInfoInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.AssemblyInfo.cs
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.csproj.CoreCompileInputs.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\bin\Debug\net8.0\39Demo_CSharp_Features.exe
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\bin\Debug\net8.0\39Demo_CSharp_Features.deps.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\bin\Debug\net8.0\39Demo_CSharp_Features.runtimeconfig.json
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\bin\Debug\net8.0\39Demo_CSharp_Features.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\bin\Debug\net8.0\39Demo_CSharp_Features.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\refint\39Demo_CSharp_Features.dll
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.pdb
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\39Demo_CSharp_Features.genruntimeconfig.cache
+C:\UNIVERSE\HalfTime\CDAC PGCP AC 2026\Module 8 .NET\LabPrac\Day2\CShrapDemos26\39Demo_CSharp_Features\obj\Debug\net8.0\ref\39Demo_CSharp_Features.dll
