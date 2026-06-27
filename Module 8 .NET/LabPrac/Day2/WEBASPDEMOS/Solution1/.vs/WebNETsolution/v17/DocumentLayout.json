@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\UNIVERSE\\HalfTime\\CDAC PGCP AC 2026\\Module 8 .NET\\LabPrac\\Day2\\WEBASPDEMOS\\Solution1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{49FB5B18-C83F-46D1-9765-4FE7180E9100}|02Demo_EmptyTemplate\\02Demo_EmptyTemplate.csproj|c:\\universe\\halftime\\cdac pgcp ac 2026\\module 8 .net\\labprac\\day2\\webaspdemos\\solution1\\02demo_emptytemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{49FB5B18-C83F-46D1-9765-4FE7180E9100}|02Demo_EmptyTemplate\\02Demo_EmptyTemplate.csproj|solutionrelative:02demo_emptytemplate\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\UNIVERSE\\HalfTime\\CDAC PGCP AC 2026\\Module 8 .NET\\LabPrac\\Day2\\WEBASPDEMOS\\Solution1\\02Demo_EmptyTemplate\\Program.cs",
+              "RelativeDocumentMoniker": "02Demo_EmptyTemplate\\Program.cs",
+              "ToolTip": "C:\\UNIVERSE\\HalfTime\\CDAC PGCP AC 2026\\Module 8 .NET\\LabPrac\\Day2\\WEBASPDEMOS\\Solution1\\02Demo_EmptyTemplate\\Program.cs",
+              "RelativeToolTip": "02Demo_EmptyTemplate\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-27T10:42:38.8Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
